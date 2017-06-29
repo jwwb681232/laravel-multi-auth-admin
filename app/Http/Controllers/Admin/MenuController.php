@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\MenuRequest;
 use App\Repositories\Eloquent\MenuRepositoryEloquent as MenuRepository;
 use App\Http\Controllers\Controller;
