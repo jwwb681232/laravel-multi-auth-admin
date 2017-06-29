@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Animating &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+        <li class="current"><a href="#content">Animating</a>
+          <ul class="toc">
+            
+              <li><a href="#animationengine_option">animationEngine option</a></li>
+            
+              <li><a href="#css_transitions">CSS transitions</a></li>
+            
+              <li><a href="#variations">Variations</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Animating</h1>
+    
+
+    <p>Isotope was developed to take advantage of the best browser features available. For animations, you can use CSS3 transitions and transforms in capable browsers. Isotope provides Javascript animation fall back for lesser browsers.</p>
+
+<h2 id='animationengine_option'>animationEngine option</h2>
+
+<p>You can control how Isotope handles animation with the <a href='options.html#animationengine'><code>animationEngine</code></a> option. This option has three values which control whether jQuery applies styles with<code>.css()</code> or <code>.animate()</code>.</p>
+
+<ul>
+<li><code>&#39;best-available&#39;</code>: if browser supports CSS transitions, Isotope uses <code>.css()</code>. If not, falls back to using <code>.animate()</code>.</li>
+
+<li><code>&#39;css&#39;</code>: Isotope uses <code>.css()</code></li>
+
+<li><code>&#39;jquery&#39;</code>: Isotope uses <code>.animate()</code></li>
+</ul>
+
+<h2 id='css_transitions'>CSS transitions</h2>
+
+<p>To enable animation with CSS transitions, you&#8217;ll need the following code in your CSS:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.isotope</span><span class='o'>,</span>
+<span class='nc'>.isotope</span> <span class='nc'>.isotope-item</span> <span class='p'>{</span>
+  <span class='c'>/* change duration value to whatever you like */</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0.8s</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0.8s</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0.8s</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0.8s</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0.8s</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='nc'>.isotope</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>height</span><span class='o'>,</span> <span class='k'>width</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>height</span><span class='o'>,</span> <span class='k'>width</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>height</span><span class='o'>,</span> <span class='k'>width</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>height</span><span class='o'>,</span> <span class='k'>width</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>height</span><span class='o'>,</span> <span class='k'>width</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='nc'>.isotope</span> <span class='nc'>.isotope-item</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span>    <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span>     <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span>      <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span>         <span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='c'>/**** disabling Isotope CSS3 transitions ****/</span>
+
+<span class='nc'>.isotope.no-transition</span><span class='o'>,</span>
+<span class='nc'>.isotope.no-transition</span> <span class='nc'>.isotope-item</span><span class='o'>,</span>
+<span class='nc'>.isotope</span> <span class='nc'>.isotope-item.no-transition</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='variations'>Variations</h2>
+
+<p>With these two options you can finely control how animation is handled across browsers.</p>
+
+<h3 id='best_available_recommended'>Best available (recommended)</h3>
+
+<p>Browsers that support CSS transitions will use them. Other browsers will fall back to using jQuery animation.</p>
+
+<ul>
+<li><strong>Add</strong> CSS transition declarations</li>
+</ul>
+
+<h3 id='always_use_jquery'>Always use jQuery</h3>
+
+<p>All browsers will use jQuery animation, regardless of their CSS transition support.</p>
+
+<ul>
+<li><code>animationEngine : &#39;jquery&#39;</code></li>
+
+<li><strong>No</strong> CSS transition declarations</li>
+</ul>
+
+<p>Never set <code>animationEngine : &#39;jquery&#39;</code> AND add CSS transition declarations. This will cause double-animation in browser that support CSS transitions &#8212; which is a bad thing.</p>
+
+<h3 id='only_css_transitions'>Only CSS transitions</h3>
+
+<ul>
+<li><code>animationEngine: &#39;css&#39;</code></li>
+
+<li><strong>Add</strong> CSS transition declarations</li>
+</ul>
+
+<h3 id='none'>None</h3>
+
+<p>Animation is not enabled in any browser</p>
+
+<ul>
+<li><code>animationEngine : &#39;css&#39;</code></li>
+
+<li><strong>No</strong> CSS transition declarations</li>
+</ul>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

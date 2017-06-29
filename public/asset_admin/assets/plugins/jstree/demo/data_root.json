@@ -1,0 +1,30 @@
+[
+    { 
+        "id": "demo_root_1", 
+        "text": "Root #1", 
+        "children": true, 
+        "type": "root",
+        "file": "data_children_root_1.json",
+        "state": {
+            "opened": true
+        }
+    },{ 
+        "id": "demo_root_2", 
+        "text": "Root #2", 
+        "children": true, 
+        "type": "root",
+        "file": "data_children_root_2.json"
+    },{ 
+        "id": "demo_root_3", 
+        "text": "Root #3", 
+        "children": true, 
+        "type": "root",
+        "file": "data_children_root_3.json"
+    },{ 
+        "id": "demo_root_4", 
+        "text": "Root #4", 
+        "children": true, 
+        "type": "root",
+        "file": "data_children_root_4.json"
+    }
+]

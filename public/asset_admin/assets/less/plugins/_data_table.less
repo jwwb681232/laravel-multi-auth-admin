@@ -1,0 +1,78 @@
+/* Data Table */
+
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, 
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+    background: #242a30;
+    border: none;
+    top: 10px;
+    left: 8px;
+    line-height: 16px;
+    .box-shadow(none);
+    .border-radius(3px);
+}
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before, 
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+    background: #00acac;
+}
+body div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 5px 0;
+}
+.dataTables_wrapper table.dataTable {
+    margin: 10px 0 !important;
+}
+.dt-buttons.btn-group {
+    float: left;
+}
+.dataTables_length,
+div.dataTables_info {
+    float: left;
+    margin-right: 15px;
+}
+.dataTables_empty {
+    text-align: center;
+}
+table.DTFC_Cloned tr.even {
+    background: none !important;
+}
+div.dataTables_scrollHead .table,
+.DTFC_LeftWrapper div.DTFC_LeftHeadWrapper table,
+.DTFC_RightWrapper div.DTFC_RightHeadWrapper table {
+    margin-bottom: 0 !important;
+    .border-radius(0) !important;
+}
+.dataTables_scrollBody .table thead > tr > th,
+.DTFC_LeftBodyLiner .table thead > tr > th {
+    border-bottom: none !important;
+}
+.dataTables_scrollBody,
+.DTFC_LeftBodyLiner {
+    border-bottom: 2px solid #ebeced;
+}
+.dataTables_wrapper .dataTables_scrollBody table.dataTable,
+.dataTables_wrapper .DTFC_LeftBodyLiner table.dataTable,
+.dataTables_scroll + .dataTables_info {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    .border-radius(0) !important;
+}
+.dataTables_wrapper .dataTables_scrollBody table.dataTable > tbody > tr > td,
+.dataTables_wrapper .DTFC_LeftWrapper table.dataTable > tbody > tr > td  {
+    border-bottom: none !important;
+}
+.table > tbody + thead > tr > th,
+.table.fixedHeader-floating thead > tr > th {
+    border-top: none;
+    border-bottom-width: 1px !important;
+}
+table.dataTable tbody > tr.selected, 
+table.dataTable tbody > tr.selected td,
+table.dataTable tbody > tr > .selected {
+    background: #ffc !important;
+    color: #707478;
+}
+table.dataTable th.focus, 
+table.dataTable td.focus {
+    position: relative;
+    z-index: 1000;
+    outline: 2px solid #242a30 !important;
+}

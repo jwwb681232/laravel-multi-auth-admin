@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Hash history with jQuery BBQ &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+        <li class="current"><a href="#content">Hash history with jQuery BBQ</a>
+          <ul class="toc">
+            
+              <li><a href="#markup">Markup</a></li>
+            
+              <li><a href="#jquery_script">jQuery script</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Hash history with jQuery BBQ</h1>
+    
+
+    <p>As cool as Isotope is, the only thing that could make it even cooler would be adding bookmark-able URL hashes. Ben Alman&#8217;s <a href='http://benalman.com/projects/jquery-bbq-plugin/'>jQuery BBQ</a> allows us to do just that.</p>
+
+<blockquote>
+<p>jQuery BBQ leverages the HTML5 hashchange event to allow simple, yet powerful bookmarkable #hash history.</p>
+</blockquote>
+
+<p><a href='../demos/hash-history.html'><strong>See Demo: Hash history</strong></a></p>
+
+<p>BBQ is a marvelous plugin that provides for a lot more functionality. The <a href='../demos/hash-history.html'>hash history demo</a> uses multiple options (<code>sortBy</code>, <code>sortAscending</code>, and <code>layoutMode</code> in addition to <code>filter</code>), the ability to use back-button history, and properly highlights selected links.</p>
+
+<p>Given BBQ&#8217;s tremendous capabilities, the code can grow to be a bit complex. Be sure to read through <a href='http://benalman.com/code/projects/jquery-bbq/docs/files/jquery-ba-bbq-js.html'>BBQ&#8217;s docs</a> and take look at <a href='http://benalman.com/code/projects/jquery-bbq/examples/'>its examples</a> before you dive in and code up your own solution.</p>
+
+<h2 id='markup'>Markup</h2>
+
+<p>Instead of setting the option values and keys with <code>data</code> attributes, we can add the option in the <code>href</code> for each link.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;ul</span> <span class='na'>class=</span><span class='s'>&quot;option-set&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#filter=*&quot;</span> <span class='na'>class=</span><span class='s'>&quot;selected&quot;</span><span class='nt'>&gt;</span>show all<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#filter=.metal&quot;</span><span class='nt'>&gt;</span>metal<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#filter=.transition&quot;</span><span class='nt'>&gt;</span>transition<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#filter=.alkali%2C+.alkaline-earth&quot;</span><span class='nt'>&gt;</span>alkali and alkaline-earth<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#filter=%3Anot(.transition)&quot;</span><span class='nt'>&gt;</span>not transition<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#filter=.metal%3Anot(.transition)&quot;</span><span class='nt'>&gt;</span>metal but not transition<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+<span class='nt'>&lt;/ul&gt;</span>
+</code></pre>
+</div>
+<p>The <code>href</code> value is a serialized string, suitable for a URL. These values can be created with <a href='http://api.jquery.com/jQuery.param/'>jQuery.param()</a>.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>.</span><span class='nx'>param</span><span class='p'>({</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='s1'>&#39;.metal&#39;</span> <span class='p'>})</span>
+<span class='c1'>// &gt;&gt; &quot;filter=.metal&quot;</span>
+<span class='nx'>$</span><span class='p'>.</span><span class='nx'>param</span><span class='p'>({</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='s1'>&#39;.alkali, alkaline-earth&#39;</span> <span class='p'>})</span>
+<span class='c1'>// &gt;&gt; &quot;filter=.alkali%2C+alkaline-earth&quot;</span>
+<span class='nx'>$</span><span class='p'>.</span><span class='nx'>param</span><span class='p'>({</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='s1'>&#39;:not(.transition)&#39;</span> <span class='p'>})</span>
+<span class='c1'>// &gt;&gt; &quot;#filter=%3Anot(.transition)&quot;</span>
+</code></pre>
+</div>
+<h2 id='jquery_script'>jQuery script</h2>
+
+<p>These serialized <code>href</code> values can be converted into their proper jQuery object form when clicked using <a href='http://benalman.com/code/projects/jquery-bbq/docs/files/jquery-ba-bbq-js.html#jQuery.deparam'>jQuery.deparam()</a> from jQuery BBQ.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;.option-set a&#39;</span><span class='p'>).</span><span class='nx'>click</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+      <span class='c1'>// get href attr, remove leading #</span>
+  <span class='kd'>var</span> <span class='nx'>href</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='k'>this</span><span class='p'>).</span><span class='nx'>attr</span><span class='p'>(</span><span class='s1'>&#39;href&#39;</span><span class='p'>).</span><span class='nx'>replace</span><span class='p'>(</span> <span class='sr'>/^#/</span><span class='p'>,</span> <span class='s1'>&#39;&#39;</span> <span class='p'>),</span>
+      <span class='c1'>// convert href into object</span>
+      <span class='c1'>// i.e. &#39;filter=.inner-transition&#39; -&gt; { filter: &#39;.inner-transition&#39; }</span>
+      <span class='nx'>option</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>.</span><span class='nx'>deparam</span><span class='p'>(</span> <span class='nx'>href</span><span class='p'>,</span> <span class='kc'>true</span> <span class='p'>);</span>
+  <span class='c1'>// set hash, triggers hashchange on window</span>
+  <span class='nx'>$</span><span class='p'>.</span><span class='nx'>bbq</span><span class='p'>.</span><span class='nx'>pushState</span><span class='p'>(</span> <span class='nx'>option</span> <span class='p'>);</span>
+  <span class='k'>return</span> <span class='kc'>false</span><span class='p'>;</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<p>Calling <a href='http://benalman.com/code/projects/jquery-bbq/docs/files/jquery-ba-bbq-js.html#jQuery.bbq.pushState'>$.bbq.pushState()</a> will trigger the <code>hashchange</code> event. At that point, we can parse the hash from the URL and use it to trigger the proper change in the Isotope instance.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='nb'>window</span><span class='p'>).</span><span class='nx'>bind</span><span class='p'>(</span> <span class='s1'>&#39;hashchange&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>event</span> <span class='p'>){</span>
+  <span class='c1'>// get options object from hash</span>
+  <span class='kd'>var</span> <span class='nx'>hashOptions</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>.</span><span class='nx'>deparam</span><span class='p'>.</span><span class='nx'>fragment</span><span class='p'>();</span>
+  <span class='c1'>// apply options from hash</span>
+  <span class='nx'>$container</span><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='nx'>hashOptions</span> <span class='p'>);</span>
+<span class='p'>})</span>
+  <span class='c1'>// trigger hashchange to capture any hash data on init</span>
+  <span class='p'>.</span><span class='nx'>trigger</span><span class='p'>(</span><span class='s1'>&#39;hashchange&#39;</span><span class='p'>);</span>
+</code></pre>
+</div>
+<p>Now any filter buttons that are clicked will update the URL hash, so these options can be bookmarked.</p>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

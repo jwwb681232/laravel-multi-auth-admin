@@ -1,0 +1,38 @@
+[{ 
+    "id": "demo_root_3_child_1", 
+    "text": "Root #3 Child 1", 
+    "children": [{ 
+        "id": "demo_root_3_child_2", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    }] 
+},{ 
+    "id": "demo_root_3_child_3", 
+    "text": "Root #3 Child 2", 
+    "children": [{ 
+        "id": "demo_root_3_child_4", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    },{ 
+        "id": "demo_root_3_child_5", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    }] 
+},{ 
+    "id": "demo_root_3_child_6", 
+    "text": "Root #3 Child 3", 
+    "children": [{ 
+        "id": "demo_root_3_child_7", 
+        "text": "One more", 
+        "type": "file" 
+    }] 
+}]

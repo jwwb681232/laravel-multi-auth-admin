@@ -1,0 +1,38 @@
+[{ 
+    "id": "demo_root_4_child_1", 
+    "text": "Root #4 Child 1", 
+    "children": [{ 
+        "id": "demo_root_4_child_2", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    }] 
+},{ 
+    "id": "demo_root_4_child_3", 
+    "text": "Root #4 Child 2", 
+    "children": [{ 
+        "id": "demo_root_4_child_4", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    },{ 
+        "id": "demo_root_4_child_5", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    }] 
+},{ 
+    "id": "demo_root_4_child_6", 
+    "text": "Root #4 Child 3", 
+    "children": [{ 
+        "id": "demo_root_4_child_7", 
+        "text": "One more", 
+        "type": "file" 
+    }] 
+}]

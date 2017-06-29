@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Combo filters, sorting, AND hash history &middot; Isotope </title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="tests ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Combo filters, sorting, AND hash history</h1>
+    
+
+    <section id="copy">
+  <p>Filters can be combined. In addition to filtering for just <code>.red</code> or <code>.tall</code>, you can pass in a filter selector of both: <code>.red.tall</code>.</p>
+</section>
+
+<section id="options" class="clearfix combo-filters">
+  <div class="clearfix">
+    <h3>Filters</h3>
+
+    
+      <div class="option-combo color">
+        <h4>color</h4>
+        <ul class="filter option-set clearfix " data-filter-group="color"> 
+          <li><a href="#filter-color-any" data-filter-value="" class="selected">any</a>
+          
+            <li><a href="#filter-color-red" data-filter-value=".red">red</a>
+          
+            <li><a href="#filter-color-blue" data-filter-value=".blue">blue</a>
+          
+            <li><a href="#filter-color-yellow" data-filter-value=".yellow">yellow</a>
+          
+        </ul>
+      </div>
+    
+      <div class="option-combo size">
+        <h4>size</h4>
+        <ul class="filter option-set clearfix " data-filter-group="size"> 
+          <li><a href="#filter-size-any" data-filter-value="" class="selected">any</a>
+          
+            <li><a href="#filter-size-small" data-filter-value=".small">small</a>
+          
+            <li><a href="#filter-size-wide" data-filter-value=".wide">wide</a>
+          
+            <li><a href="#filter-size-tall" data-filter-value=".tall">tall</a>
+          
+            <li><a href="#filter-size-big" data-filter-value=".big">big</a>
+          
+        </ul>
+      </div>
+    
+      <div class="option-combo shape">
+        <h4>shape</h4>
+        <ul class="filter option-set clearfix " data-filter-group="shape"> 
+          <li><a href="#filter-shape-any" data-filter-value="" class="selected">any</a>
+          
+            <li><a href="#filter-shape-round" data-filter-value=".round">round</a>
+          
+            <li><a href="#filter-shape-square" data-filter-value=".square">square</a>
+          
+        </ul>
+      </div>
+    
+  </div>
+
+  <h3>Sort</h3>
+  
+    <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
+      <li><a href="#sortBy=original-order" data-option-value="original-order" class="selected" data>original-order</a></li>
+      <li><a href="#sortBy=color" data-option-value="color">color</a></li>
+      <li><a href="#sortBy=size" data-option-value="size">size</a></li>
+      <li><a href="#sortBy=shape" data-option-value="shape">shape</a></li>
+    </ul>
+
+
+</section> <!-- #options -->
+
+<div id="container" class="clearfix">
+  
+    
+      
+        <div class="color-shape small round red" data-size="small" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape small round blue" data-size="small" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape small round yellow" data-size="small" data-color="yellow" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape small square red" data-size="small" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape small square blue" data-size="small" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape small square yellow" data-size="small" data-color="yellow" data-shape="square"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape wide round red" data-size="wide" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape wide round blue" data-size="wide" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape wide round yellow" data-size="wide" data-color="yellow" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape wide square red" data-size="wide" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape wide square blue" data-size="wide" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape wide square yellow" data-size="wide" data-color="yellow" data-shape="square"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape tall round red" data-size="tall" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape tall round blue" data-size="tall" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape tall round yellow" data-size="tall" data-color="yellow" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape tall square red" data-size="tall" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape tall square blue" data-size="tall" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape tall square yellow" data-size="tall" data-color="yellow" data-shape="square"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape big round red" data-size="big" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape big round blue" data-size="big" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape big round yellow" data-size="big" data-color="yellow" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape big square red" data-size="big" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape big square blue" data-size="big" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape big square yellow" data-size="big" data-color="yellow" data-shape="square"></div>
+      
+    
+  
+  
+  
+  
+    
+      
+        <div class="color-shape small round red" data-size="small" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape wide round red" data-size="wide" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape tall round red" data-size="tall" data-color="red" data-shape="round"></div>
+      
+        <div class="color-shape big round red" data-size="big" data-color="red" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape small square red" data-size="small" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape wide square red" data-size="wide" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape tall square red" data-size="tall" data-color="red" data-shape="square"></div>
+      
+        <div class="color-shape big square red" data-size="big" data-color="red" data-shape="square"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape small round blue" data-size="small" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape wide round blue" data-size="wide" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape tall round blue" data-size="tall" data-color="blue" data-shape="round"></div>
+      
+        <div class="color-shape big round blue" data-size="big" data-color="blue" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape small square blue" data-size="small" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape wide square blue" data-size="wide" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape tall square blue" data-size="tall" data-color="blue" data-shape="square"></div>
+      
+        <div class="color-shape big square blue" data-size="big" data-color="blue" data-shape="square"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape small round yellow" data-size="small" data-color="yellow" data-shape="round"></div>
+      
+        <div class="color-shape wide round yellow" data-size="wide" data-color="yellow" data-shape="round"></div>
+      
+        <div class="color-shape tall round yellow" data-size="tall" data-color="yellow" data-shape="round"></div>
+      
+        <div class="color-shape big round yellow" data-size="big" data-color="yellow" data-shape="round"></div>
+      
+    
+      
+        <div class="color-shape small square yellow" data-size="small" data-color="yellow" data-shape="square"></div>
+      
+        <div class="color-shape wide square yellow" data-size="wide" data-color="yellow" data-shape="square"></div>
+      
+        <div class="color-shape tall square yellow" data-size="tall" data-color="yellow" data-shape="square"></div>
+      
+        <div class="color-shape big square yellow" data-size="big" data-color="yellow" data-shape="square"></div>
+      
+    
+  
+  
+</div> <!-- #container -->
+
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script src="../js/jquery.ba-bbq.min.js"></script>
+<script src="../jquery.isotope.min.js"></script>
+<script>
+$(function(){
+    
+  var $container = $('#container');
+  var initialOptions = {
+    itemSelector : '.color-shape',
+    masonry: {
+      columnWidth: 80
+    },
+    getSortData: {
+      color: function( $elem ) {
+        return $elem.attr('data-color');
+      },
+      shape: function( $elem ) {
+        return $elem.attr('data-shape');
+      },
+      size: function( $elem ) {
+        return $elem.attr('data-size');
+      }
+    }
+  };
+  // build a hash for all our options
+  var options = {
+    // special hash for combination filters
+    comboFilters: {}
+  };
+
+
+  // filter buttons
+  $('.filter').on( 'click', 'a', function( event ) {
+    event.preventDefault();
+    var $this = $(this);
+    // don't proceed if already selected
+    if ( $this.hasClass('selected') ) {
+      return false;
+    }
+
+    // console.log('hello world');
+    var $optionSet = $this.parents('.option-set');
+    var group = $optionSet.attr('data-filter-group');
+    options.comboFilters[ group ] = $this.attr('data-filter-value');
+    $.bbq.pushState( options );
+  });
+
+  var $sortBy = $('#sort-by').on( 'click', 'a', function( event ) {
+    event.preventDefault();
+    var $this = $(this);
+    // don't proceed if already selected
+    if ( $this.hasClass('selected') ) {
+      return false;
+    }
+    options.sortBy = $this.attr('data-option-value');
+    // console.log( options );
+    $.bbq.pushState( options );
+  });
+
+  function selectLink( $link ) {
+    $link.parents('.option-set').find('.selected').removeClass('selected');
+    $link.addClass('selected')
+  }
+
+  var location = window.location;
+  var $comboFilterOptionSets = $('.combo-filters .option-set');
+
+
+  function getComboFilterSelector( comboFilters ) {
+    // build filter
+    var isoFilters = [];
+    var filterValue, $link, $optionSet;
+    for ( var prop in comboFilters ) {
+      filterValue = comboFilters[ prop ];
+      isoFilters.push( filterValue );
+      // change selected combo filter link
+      $optionSet = $comboFilterOptionSets.filter('[data-filter-group="' + prop + '"]');
+      $link = $optionSet.find('a[data-filter-value="' + filterValue + '"]');
+      selectLink( $link );
+    }
+    var selector = isoFilters.join('');
+    return selector;
+  }
+
+  $( window ).on( 'hashchange', function() {
+    // get options from hash
+    if ( location.hash ) {
+      $.extend( options, $.deparam.fragment( location.hash, true ) );
+    }
+    // build options from hash and initial options
+    var isoOptions = $.extend( {}, initialOptions, options );
+
+    if ( options.comboFilters ) {
+      isoOptions.filter = getComboFilterSelector( options.comboFilters );
+    }
+
+    // change selected link for sortBy
+    if ( options.sortBy ) {
+      var $link = $sortBy.find('a[data-option-value="' + options.sortBy + '"]');
+      selectLink( $link );
+    }
+
+    $container.isotope( isoOptions );
+  })
+    // trigger hashchange to capture initial hash options
+    .trigger( 'hashchange' );
+
+});
+  
+</script>
+
+
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Methods &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+        <li class="current"><a href="#content">Methods</a>
+          <ul class="toc">
+            
+              <li><a href="#additems">addItems</a></li>
+            
+              <li><a href="#appended">appended</a></li>
+            
+              <li><a href="#destroy">destroy</a></li>
+            
+              <li><a href="#insert">insert</a></li>
+            
+              <li><a href="#layout">layout</a></li>
+            
+              <li><a href="#option">option</a></li>
+            
+              <li><a href="#relayout">reLayout</a></li>
+            
+              <li><a href="#reloaditems">reloadItems</a></li>
+            
+              <li><a href="#remove">remove</a></li>
+            
+              <li><a href="#shuffle">shuffle</a></li>
+            
+              <li><a href="#updatesortdata">updateSortData</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Methods</h1>
+    
+
+    <p>Isotope offers several methods to extend functionality. Isotope&#8217;s methods follow the jQuery UI pattern.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;methodName&#39;</span><span class='p'>,</span> <span class='p'>[</span><span class='nx'>optionalParameters</span><span class='p'>]</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<h2 id='additems'>addItems</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;addItems&#39;</span><span class='p'>,</span> <span class='nx'>$items</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Adds item elements to the pool of item elements of the container, but does not sort, filter or layout. See <a href='adding-items.html'>Adding items</a> for more details. The argument within the callback is the group of elements that were added.</p>
+
+<p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a></p>
+
+<h2 id='appended'>appended</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;appended&#39;</span><span class='p'>,</span> <span class='nx'>$items</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Adds item elements via <code>addItems</code> method, then triggers <code>layout</code> just for those new elements. Useful for Infinite Scroll. See <a href='adding-items.html'>Adding items</a> for more details.</p>
+
+<p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a></p>
+
+<h2 id='destroy'>destroy</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;destroy&#39;</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Removes Isotope functionality completely. Returns element back to pre-init state.</p>
+
+<h2 id='insert'>insert</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;insert&#39;</span><span class='p'>,</span> <span class='nx'>$items</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Appends items elements to container, adds items to via <code>addItems</code> method, and then triggers <code>reLayout</code> method so new elements are properly filtered, sorted and laid-out. See <a href='adding-items.html'>Adding items</a> for more details.</p>
+
+<p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a>.</p>
+
+<h2 id='layout'>layout</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;layout&#39;</span><span class='p'>,</span> <span class='nx'>$items</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Positions specified item elements in layout.</p>
+
+<p><code>layout</code> will only position specified elements, and those elements will be positioned at the end of layout. Whereas <code>reLayout</code> will position all elements in the Isotope widget.</p>
+
+<h2 id='option'>option</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;option&#39;</span><span class='p'>,</span> <span class='nx'>options</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Sets options for plugin instance. Unlike passing options through <code>.isotope()</code>, using the <code>option</code> method will not trigger layout.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// sets multiple options</span>
+<span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;option&#39;</span><span class='p'>,</span> <span class='p'>{</span> <span class='nx'>layoutMode</span><span class='o'>:</span> <span class='s1'>&#39;fitRows&#39;</span><span class='p'>,</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='s1'>&#39;.my-filter&#39;</span> <span class='p'>}</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<h2 id='relayout'>reLayout</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;reLayout&#39;</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Resets layout properties and lays-out every item element.</p>
+
+<p><a href='../demos/relayout.html'><strong>See Demo: reLayout</strong></a></p>
+
+<h2 id='reloaditems'>reloadItems</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;reloadItems&#39;</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Re-collects all item elements in their current order in the DOM. Useful for prepending.</p>
+
+<p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a>.</p>
+
+<h2 id='remove'>remove</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;remove&#39;</span><span class='p'>,</span> <span class='nx'>$items</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Removes specified item elements from Isotope widget and the DOM.</p>
+
+<p><a href='../demos/removing.html'><strong>See Demo: Removing</strong></a>.</p>
+
+<h2 id='shuffle'>shuffle</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;shuffle&#39;</span><span class='p'>,</span> <span class='nx'>callback</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Shuffles order of items. Sets <a href='options.html#sortby'><code>sortBy</code> option</a> to <a href='sorting.html#sortby_option'><code>&#39;random&#39;</code></a>.</p>
+
+<h2 id='updatesortdata'>updateSortData</h2>
+<div class='highlight'><pre><code class='javascript'><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;updateSortData&#39;</span><span class='p'>,</span> <span class='nx'>$items</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p>Updates the sorting data on specified item elements. This method is useful if the data within an item is changed dynamically after Isotope has been initialized.</p>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

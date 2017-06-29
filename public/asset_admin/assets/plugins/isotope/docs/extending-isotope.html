@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Extending Isotope &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+        <li class="current"><a href="#content">Extending Isotope</a>
+          <ul class="toc">
+            
+              <li><a href="#custom_layout_modes">Custom layout modes</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Extending Isotope</h1>
+    
+
+    <p>Isotope uses a constructor pattern, <code>$.Isotope</code>. To extend Isotope, you need only to add a method to <code>$.Isotope.prototype</code>.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>myMethod</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>};</span>
+
+<span class='c1'>// or, using jQuery extend utility</span>
+<span class='nx'>$</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>(</span> <span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>,</span> <span class='p'>{</span>
+  <span class='nx'>myMethod</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<p>Before diving in, try <a href='../jquery.isotope.js'>looking over the source</a> to get a better understand of the internal logic behind Isotope.</p>
+
+<h2 id='custom_layout_modes'>Custom layout modes</h2>
+
+<p>Isotope&#8217;s layout modes are built around four methods: <code>Reset</code>, <code>Layout</code>, <code>GetContainerSize</code>, and <code>ResizeChanged</code>. These methods are the hooks that allow you to develop your own custom layout mode, without getting your hands dirty dealing with sorting, filtering, or other functionality. These layout mode methods need to be prefixed with an underscore and the name of the layout mode.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// adding layout mode methods for &#39;customMode&#39;</span>
+<span class='nx'>$</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>(</span> <span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>,</span> <span class='p'>{</span>
+  <span class='nx'>_customModeReset</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>},</span>
+  <span class='nx'>_customModeLayout</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elems</span> <span class='p'>)</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>},</span>
+  <span class='nx'>_customModeGetContainerSize</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>},</span>
+  <span class='nx'>_customModeResizeChanged</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<p><a href='../custom-layout-modes/category-rows.html'><strong>See Custom layout mode: Category Rows</strong></a> <a href='../custom-layout-modes/spine-align.html'><strong>See Custom layout mode: Spine align</strong></a></p>
+
+<p>All of the <a href='../docs/layout-modes.html'>default layout modes</a> follow this pattern. We&#8217;ll look at the code behind the <em>fitRows</em> layout mode.</p>
+
+<h3 id='reset'>Reset</h3>
+
+<p>Each layout mode should have its own set of properties that only it can use and not be affected by other layout modes. These properties can be accessed in the instance as an object whose value matches the layout mode name (i.e. <code>this.fitRows</code> for <em>fitRows</em>).</p>
+
+<p>The <code>Reset</code> layout mode method is called with every <code>reLayout</code>, where Isotope will go through each item element and position it. This method resets layout mode properties.</p>
+
+<p>The <em>fitRows</em> layout mode keeps track of x and y position, as well as the height of the container. These properties are set back to zero in <code>Reset</code>.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsReset</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='k'>this</span><span class='p'>.</span><span class='nx'>fitRows</span> <span class='o'>=</span> <span class='p'>{</span>
+    <span class='nx'>x</span> <span class='o'>:</span> <span class='mi'>0</span><span class='p'>,</span>
+    <span class='nx'>y</span> <span class='o'>:</span> <span class='mi'>0</span><span class='p'>,</span>
+    <span class='nx'>height</span> <span class='o'>:</span> <span class='mi'>0</span>
+  <span class='p'>};</span>
+<span class='p'>},</span>
+</code></pre>
+</div>
+<h3 id='layout'>Layout</h3>
+
+<p>The <code>Layout</code> layout mode method is where items are positioned. Most of your layout logic happens here. This method provides one argument <code>$elems</code> &#8211; a jQuery object with the item elements that need to be positioned.</p>
+
+<p><code>$elems.each</code> is the principle loop, iterating over each item element and positioning it. Items are positioned with the <code>_pushPosition</code> method (see below). The layout modes properties are</p>
+
+<p>For <em>fitRows</em>, items are placed with the <code>this.fitRows.x</code> and <code>this.fitRows.y</code> values. This position is determined by if the item can fit in the current row, or if a new row needs to be started.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsLayout</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elems</span> <span class='p'>)</span> <span class='p'>{</span>
+  <span class='kd'>var</span> <span class='nx'>instance</span> <span class='o'>=</span> <span class='k'>this</span><span class='p'>,</span>
+      <span class='nx'>containerWidth</span> <span class='o'>=</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>element</span><span class='p'>.</span><span class='nx'>width</span><span class='p'>(),</span>
+      <span class='nx'>props</span> <span class='o'>=</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>fitRows</span><span class='p'>;</span>
+  
+  <span class='nx'>$elems</span><span class='p'>.</span><span class='nx'>each</span><span class='p'>(</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+    <span class='kd'>var</span> <span class='nx'>$this</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='k'>this</span><span class='p'>),</span>
+        <span class='nx'>atomW</span> <span class='o'>=</span> <span class='nx'>$this</span><span class='p'>.</span><span class='nx'>outerWidth</span><span class='p'>(</span><span class='kc'>true</span><span class='p'>),</span>
+        <span class='nx'>atomH</span> <span class='o'>=</span> <span class='nx'>$this</span><span class='p'>.</span><span class='nx'>outerHeight</span><span class='p'>(</span><span class='kc'>true</span><span class='p'>);</span>
+  
+    <span class='k'>if</span> <span class='p'>(</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>!==</span> <span class='mi'>0</span> <span class='o'>&amp;&amp;</span> <span class='nx'>atomW</span> <span class='o'>+</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>&gt;</span> <span class='nx'>containerWidth</span> <span class='p'>)</span> <span class='p'>{</span>
+      <span class='c1'>// if this element cannot fit in the current row</span>
+      <span class='nx'>props</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>;</span>
+      <span class='nx'>props</span><span class='p'>.</span><span class='nx'>y</span> <span class='o'>=</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>height</span><span class='p'>;</span>
+    <span class='p'>}</span> 
+  
+    <span class='c1'>// position the atom</span>
+    <span class='nx'>instance</span><span class='p'>.</span><span class='nx'>_pushPosition</span><span class='p'>(</span> <span class='nx'>$this</span><span class='p'>,</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>x</span><span class='p'>,</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>y</span> <span class='p'>);</span>
+
+    <span class='nx'>props</span><span class='p'>.</span><span class='nx'>height</span> <span class='o'>=</span> <span class='nb'>Math</span><span class='p'>.</span><span class='nx'>max</span><span class='p'>(</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>y</span> <span class='o'>+</span> <span class='nx'>atomH</span><span class='p'>,</span> <span class='nx'>props</span><span class='p'>.</span><span class='nx'>height</span> <span class='p'>);</span>
+    <span class='nx'>props</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>+=</span> <span class='nx'>atomW</span><span class='p'>;</span>
+
+  <span class='p'>});</span>
+<span class='p'>},</span>
+</code></pre>
+</div>
+<h3 id='getcontainersize'>GetContainerSize</h3>
+
+<p>After the script goes through positioning each item, it needs to resize the container. <code>GetContainerSize</code> returns the style for the size of the container.</p>
+
+<p>In <em>fitRows</em>, the height property is returned as the value for height.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsGetContainerSize</span> <span class='o'>:</span> <span class='kd'>function</span> <span class='p'>()</span> <span class='p'>{</span>
+  <span class='k'>return</span> <span class='p'>{</span> <span class='nx'>height</span> <span class='o'>:</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>fitRows</span><span class='p'>.</span><span class='nx'>height</span> <span class='p'>};</span>
+<span class='p'>},</span>
+</code></pre>
+</div>
+<h3 id='resizechanged'>ResizeChanged</h3>
+
+<p><code>ResizeChanged</code> is triggered whenever the browser window is resized. Before Isotope adjusts the layout, this method is triggered to determine if the layout has actually changed. The methods return a boolean.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsResizeChanged</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span>
+<span class='p'>},</span>
+</code></pre>
+</div>
+<h3 id='helper_methods'>Helper methods</h3>
+
+<p>The <code>_pushPosition</code> method is used within a layout mode&#8217;s <code>Layout</code> method. It takes 3 arguments: the item element currently being positioned, the x position, and the y position.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_pushPosition</span><span class='p'>(</span> <span class='nx'>$item</span><span class='p'>,</span> <span class='nx'>x</span><span class='p'>,</span> <span class='nx'>y</span> <span class='p'>)</span>
+</code></pre>
+</div>
+<p><code>_getSegments</code> is used within the layout mode&#8217;s <code>Reset</code> method. It performs several utilities:</p>
+
+<ul>
+<li>Determines the <code>columnWidth</code> for the layout mode (<code>rowHeight</code> for horizontal layout modes). This is either passed in as an option (i.e. <code>masonry { columnWidth: 90 }</code>), or the width of the first item element. This property is then set for the layout mode, i.e. <code>this.masonry.columnWidth</code>.</li>
+
+<li>Calculates the number of number of columns (or rows, if horizontal) given the size of the container. This property is then set for the layout mode, i.e. <code>this.masonry.cols</code>.</li>
+</ul>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_getSegments</span><span class='p'>(</span> <span class='nx'>isHorizontal</span> <span class='p'>)</span>
+
+<span class='c1'>// for example</span>
+<span class='nx'>_cellsByRowReset</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='k'>this</span><span class='p'>.</span><span class='nx'>cellsByRow</span> <span class='o'>=</span> <span class='p'>{</span>
+    <span class='nx'>index</span> <span class='o'>:</span> <span class='mi'>0</span>
+  <span class='p'>};</span>
+  <span class='c1'>// get this.cellsByRow.columnWidth</span>
+  <span class='k'>this</span><span class='p'>.</span><span class='nx'>_getSegments</span><span class='p'>();</span>
+  <span class='c1'>// get this.cellsByRow.rowHeight</span>
+  <span class='k'>this</span><span class='p'>.</span><span class='nx'>_getSegments</span><span class='p'>(</span><span class='kc'>true</span><span class='p'>);</span>
+<span class='p'>},</span>
+</code></pre>
+</div>
+<p>Similarly, <code>_checkIfSegmentsChanged</code> is used within <code>ResizeChanged</code>. It returns a boolean indicating whether or not the number of columns or rows has changed since the window has been resized.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>_checkIfSegmentsChanged</span><span class='p'>(</span> <span class='nx'>isHorizontal</span> <span class='p'>)</span>
+
+<span class='c1'>// for example</span>
+<span class='nx'>_masonryResizeChanged</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='k'>return</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>_checkIfSegmentsChanged</span><span class='p'>();</span>
+<span class='p'>},</span>
+</code></pre>
+</div>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

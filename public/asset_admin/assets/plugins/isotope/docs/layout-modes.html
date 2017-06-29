@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Layout modes &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs option-def">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+        <li class="current"><a href="#content">Layout modes</a>
+          <ul class="toc">
+            
+              <li><a href="#horizontal_layouts">Horizontal layouts</a></li>
+            
+              <li><a href="#cellsbycolumn">cellsByColumn</a></li>
+            
+              <li><a href="#cellsbyrow">cellsByRow</a></li>
+            
+              <li><a href="#fitcolumns">fitColumns</a></li>
+            
+              <li><a href="#fitrows">fitRows</a></li>
+            
+              <li><a href="#masonry">masonry</a></li>
+            
+              <li><a href="#masonryhorizontal">masonryHorizontal</a></li>
+            
+              <li><a href="#straightacross">straightAcross</a></li>
+            
+              <li><a href="#straightdown">straightDown</a></li>
+            
+              <li><a href="#modified_layout_modes">Modified layout modes</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Layout modes</h1>
+    
+
+    <p>Isotope has a versatile layout engine that can accommodate multiple layout modes. You can set and change the layout mode via the <code>layoutMode</code> option.</p>
+
+<p><a href='../demos/layout-modes.html'><strong>See Demo: Layout modes</strong></a></p>
+
+<h3 id='example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>layoutMode</span> <span class='o'>:</span> <span class='s1'>&#39;fitRows&#39;</span> <span class='p'>});</span>
+</code></pre>
+</div>
+<p>Several layout modes are built into Isotope.</p>
+
+<h3 id='horizontal_layouts'>Horizontal layouts</h3>
+
+<p>Horizontal layout modes (masonryHorizontal, fitColumns, cellsByColumn, and straightAcross) need a container that has a height value. Be sure that your CSS has height set.</p>
+<div class='highlight'><pre><code class='css'><span class='nf'>#container</span> <span class='p'>{</span>
+  <span class='c'>/* either of these will work for horizontal Isotope layouts */</span>
+  <span class='k'>height</span><span class='o'>:</span> <span class='m'>80</span><span class='o'>%</span><span class='p'>;</span>
+  <span class='k'>height</span><span class='o'>:</span> <span class='m'>480px</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='cellsbycolumn'>cellsByColumn</h2>
+
+<p>A <strong>horizontal</strong> grid layout where items are centered inside each cell. The grid is defined by two options, <code>columnWidth</code> and <code>rowHeight</code>. The horizontal equivalent of cellsByRow.</p>
+
+<h3 id='cellsByColumn-options'>Options</h3>
+<dl class='clearfix'>
+  <dt><code>columnWidth</code></dt>
+  <dd class='option-type'>Integer</dd>
+</dl><dl class='clearfix'>
+  <dt><code>rowHeight</code></dt>
+  <dd class='option-type'>Integer</dd>
+</dl>
+<h3 id='cellsByColumn-example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>layoutMode</span><span class='o'>:</span> <span class='s1'>&#39;cellsByColumn&#39;</span><span class='p'>,</span>
+  <span class='nx'>cellsByRow</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>columnWidth</span><span class='o'>:</span> <span class='mi'>240</span><span class='p'>,</span>
+    <span class='nx'>rowHeight</span><span class='o'>:</span> <span class='mi'>360</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='cellsbyrow'>cellsByRow</h2>
+
+<p>A <strong>vertical</strong> grid layout where items are centered inside each cell. The grid is defined by two options, <code>columnWidth</code> and <code>rowHeight</code>.</p>
+
+<h3 id='cellsByRow-options'>Options</h3>
+<dl class='clearfix'>
+  <dt><code>columnWidth</code></dt>
+  <dd class='option-type'>Integer</dd>
+</dl><dl class='clearfix'>
+  <dt><code>rowHeight</code></dt>
+  <dd class='option-type'>Integer</dd>
+</dl>
+<h3 id='cellsByRow-example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>layoutMode</span><span class='o'>:</span> <span class='s1'>&#39;cellsByRow&#39;</span><span class='p'>,</span>
+  <span class='nx'>cellsByRow</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>columnWidth</span><span class='o'>:</span> <span class='mi'>240</span><span class='p'>,</span>
+    <span class='nx'>rowHeight</span><span class='o'>:</span> <span class='mi'>360</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='fitcolumns'>fitColumns</h2>
+
+<p>Item elements are arranged into columns. Columns progress <strong>horizontally</strong> from left to right. Items within those columns are arranged top-to-bottom. The horizontal equivalent of fitRows.</p>
+
+<h2 id='fitrows'>fitRows</h2>
+
+<p>Item elements are arranged into rows. Rows progress <strong>vertically</strong> top to bottom. Similar to what you would expect from a layout that uses <code>float: left</code>.</p>
+
+<h2 id='masonry'>masonry</h2>
+
+<p>Masonry is the default layout mode for Isotope. Item elements are arranged intelligently within a <strong>vertical</strong> grid. For each item element, the script calculates the next best fit for the item within the grid.</p>
+
+<h3 id='masonry-options'>Options</h3>
+<dl class='clearfix'>
+  <dt><code>columnWidth</code></dt>
+  <dd class='option-type'>Integer</dd>
+</dl>
+<p>The width of one column in the grid. If no value is set for <code>columnWidth</code>, default is the width of the first item element.</p>
+
+<h3 id='masonry-example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>masonry</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>columnWidth</span><span class='o'>:</span> <span class='mi'>240</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='masonryhorizontal'>masonryHorizontal</h2>
+
+<p>The <strong>horizontal</strong> equivalent of masonry layout. Instead of progressing top-to-bottom, masonryHorizontal layout will progress left-to-right. Item elements are arranged intelligently within a grid. For each item element, the script calculates the next best fit for the item within the grid.</p>
+
+<h3 id='masonryHorizontal-options'>Options</h3>
+<dl class='clearfix'>
+  <dt><code>rowHeight</code></dt>
+  <dd class='option-type'>Integer</dd>
+</dl>
+<p>The width of one column in the grid. If no value is set for <code>rowHeight</code>, default is the height of the first item element.</p>
+
+<h3 id='masonryHorizontal-example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>masonryHorizontal</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>rowHeight</span><span class='o'>:</span> <span class='mi'>360</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='straightacross'>straightAcross</h2>
+
+<p>Item elements are arranged <strong>horizontally</strong> left to right. Useful for simple lists.</p>
+
+<h2 id='straightdown'>straightDown</h2>
+
+<p>Item elements are arranged <strong>vertically</strong> top to bottom. Useful for simple lists.</p>
+
+<h2 id='modified_layout_modes'>Modified layout modes</h2>
+
+<p><a href='extending-isotope.html'>Isotope&#8217;s methods can be extended and overwritten</a> to shim-in additional functionality. See these modified layout modes:</p>
+
+<ul>
+<li><a href='../custom-layout-modes/centered-masonry.html'><strong>Centered masonry</strong></a></li>
+
+<li><a href='../custom-layout-modes/masonry-corner-stamp.html'><strong>Masonry corner stamp</strong></a></li>
+
+<li><a href='../custom-layout-modes/masonry-gutters.html'><strong>Masonry gutters</strong></a></li>
+</ul>
+
+<p>To use these mods, copy the revised methods found in the demos&#8217; page source. They look like:</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>_masonryReset</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='c1'>// modified code..</span>
+<span class='p'>};</span>
+</code></pre>
+</div>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

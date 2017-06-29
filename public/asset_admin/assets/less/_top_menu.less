@@ -1,0 +1,183 @@
+/* Top Menu Element */
+
+.page-with-top-menu {
+    padding-top: 94px;
+    
+    & .sidebar {
+        padding-top: 94px;
+    }
+}
+.top-menu {
+    background: #2d353c;
+    height: 40px;
+    position: fixed;
+    top: 54px;
+    left: 0;
+    right: 0;
+    z-index: 1015;
+    
+    & .nav {
+        white-space: nowrap;
+        
+        & > li {
+            display: inline-block;
+            position: relative;
+        }
+        & > li + li {
+            margin-left: -3px;
+        }
+        & > li > a {
+            padding: 10px 20px;
+            color: #a8acb1;
+            line-height: 20px;
+        }
+        & > li > a .badge,
+        & > li > a .label {
+            margin-left: 5px;
+        }
+        & > li > a .badge {
+            background: #1b1f24;
+        }
+        & > li > a .badge.pull-right,
+        & > li > a .label.pull-right {
+            margin-top: 1px;
+        }
+        & > li.active > a .label.label-theme,
+        & > li.active > a .badge {
+            background: url(../img/transparent/black-0.4.png);
+            background: rgba(0,0,0,0.4);
+        }
+        & > li > a i {
+            float: left;
+            font-size: 14px;
+            margin-right: 10px;
+            line-height: 18px;
+            width: 14px;
+            text-align: center;
+        }
+        & > li > a .caret.pull-right {
+            margin-top: 8px;
+            margin-left: 5px;
+        }
+        & > li:hover > a,
+        & > li:focus > a,
+        & > li > a:hover,
+        & > li > a:focus {
+            background: #232a2f;
+            color: #a8acb1;
+        }
+    }
+}
+
+
+/* Top Menu Sub Menu Setting */
+
+.top-menu {
+    & .nav .sub-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 220px;
+        top: 100%;
+        background: #1a2229;
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 0;
+    }
+    & .sub-menu > li > a {
+        padding: 5px 20px;
+        display: block;
+        color: #8a8f94;
+        text-decoration: none;
+        position: relative;
+    }
+    & .nav .sub-menu > li > a .caret {
+        margin-top: 7px;
+    }
+    & .sub-menu .sub-menu {
+        background: url(../img/transparent/black-0.2.png);
+        background: rgba(0,0,0,0.2);
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    & .sub-menu > li.active > a,
+    & .sub-menu > li.active > a:hover,
+    & .sub-menu > li.active > a:focus,
+    & .sub-menu > li > a:hover,
+    & .sub-menu > li > a:focus {
+        color: #fff;
+    }
+    & .nav > li.has-sub:hover > .sub-menu {
+        display: block;
+    }
+    & .nav > li.active > a,
+    & .nav > li.active > a:hover,
+    & .nav > li.active > a:focus{
+        background: #00acac;
+        color: #fff;
+    }
+}
+
+
+/* Top Menu Left & Right Control Setting */
+
+@keyframes slideInLeft {
+    from { left: -50px; }
+    to { left: 0; }
+}
+@-webkit-keyframes slideInLeft {
+    from { left: -50px; }
+    to { left: 0; }
+}
+@keyframes slideInRight {
+    from { right: -50px; }
+    to { right: 0; }
+}
+@-webkit-keyframes slideInRight {
+    from { right: -50px; }
+    to { right: 0; }
+}
+.top-menu .nav > li.menu-control {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    background: #2d353c;
+    height: 40px;
+    margin: 0;
+    
+    & > a {
+        padding: 0;
+        text-align: center;
+        line-height: 40px;
+    }
+    & > a i {
+        float: none;
+        margin: 0;
+        font-size: 18px;
+        display: block;
+        line-height: 40px;
+        color: #fff;
+        width: auto;
+    }
+    &.menu-control-left {
+        left: -50px;
+    }
+    &.menu-control-right {
+        right: -50px;
+    }
+    &.menu-control-left.show {
+        .animation(slideInLeft .2s);
+        left: 0;
+    }
+    &.menu-control-right.show {
+        .animation(slideInRight .2s);
+        right: 0;
+    }
+    &.menu-control-left > a {
+        .box-shadow(5px 0 8px -3px rgba(0,0,0,0.5));
+    }
+    &.menu-control-right > a {
+        .box-shadow(-5px 0 8px -3px rgba(0,0,0,0.5));
+    }
+}

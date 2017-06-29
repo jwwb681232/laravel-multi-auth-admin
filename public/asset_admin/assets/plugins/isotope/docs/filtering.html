@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Filtering &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+        <li class="current"><a href="#content">Filtering</a>
+          <ul class="toc">
+            
+              <li><a href="#markup">Markup</a></li>
+            
+              <li><a href="#jquery_script">jQuery script</a></li>
+            
+              <li><a href="#creating_interactive_buttons">Creating interactive buttons</a></li>
+            
+              <li><a href="#recommended_css">Recommended CSS</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Filtering</h1>
+    
+
+    <p>Isotope can hide and show item elements via the <a href='options.html#filter'><code>filter</code> option</a>. <code>filter</code> accepts a jQuery selector. Items that match that selector will be shown. Items that do not match will be hidden.</p>
+
+<p><a href='../demos/filtering.html'><strong>See Demo: Filtering</strong></a></p>
+
+<h2 id='markup'>Markup</h2>
+
+<p>Each item element has several identifying classes. In this case, <code>transition</code>, <code>metal</code>, <code>lanthanoid</code>, <code>alkali</code>, etc.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&quot;container&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element transition metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element post-transition metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element alkali metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element transition metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element lanthanoid metal inner-transition&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span> 
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element halogen nonmetal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span> 
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element alkaline-earth metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
+  ...
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
+</div>
+<h2 id='jquery_script'>jQuery script</h2>
+
+<p>To show only <code>.metal</code> items, the jQuery script would be:</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='s1'>&#39;.metal&#39;</span> <span class='p'>});</span>
+</code></pre>
+</div>
+<p>The <code>filter</code> option uses a <a href='http://api.jquery.com/category/selectors/'>jQuery selector</a> to show item elements that match a selector, and hide all others that do not. For example:</p>
+
+<ul>
+<li><code>.alkali, .alkaline-earth</code> will show <code>.alkali</code> AND <code> .alkaline-earth</code> item elements.</li>
+
+<li><code>.metal.transition</code> will show item elements that have BOTH <code>.metal</code> and <code>.transition</code> classes.</li>
+
+<li><code>.metal:not(.transition)</code> will show <code>.metal</code> item elements that are NOT <code>.transition</code>.</li>
+</ul>
+
+<h2 id='creating_interactive_buttons'>Creating interactive buttons</h2>
+
+<p>Let&#8217;s use a basic list for our buttons</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;ul</span> <span class='na'>id=</span><span class='s'>&quot;filters&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;*&quot;</span><span class='nt'>&gt;</span>show all<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;.metal&quot;</span><span class='nt'>&gt;</span>metal<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;.transition&quot;</span><span class='nt'>&gt;</span>transition<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;.alkali, .alkaline-earth&quot;</span><span class='nt'>&gt;</span>alkali and alkaline-earth<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;:not(.transition)&quot;</span><span class='nt'>&gt;</span>not transition<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+  <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;.metal:not(.transition)&quot;</span><span class='nt'>&gt;</span>metal but not transition<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+<span class='nt'>&lt;/ul&gt;</span>
+</code></pre>
+</div>
+<p>Here we set the filter for each link with a <code>data-filter</code> attribute. In our jQuery script, whenever a link is clicked, we&#8217;ll use this attribute as the filter selector.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// cache container</span>
+<span class='kd'>var</span> <span class='nx'>$container</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>);</span>
+<span class='c1'>// initialize isotope</span>
+<span class='nx'>$container</span><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='c1'>// options...</span>
+<span class='p'>});</span>
+
+<span class='c1'>// filter items when filter link is clicked</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#filters a&#39;</span><span class='p'>).</span><span class='nx'>click</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+  <span class='kd'>var</span> <span class='nx'>selector</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='k'>this</span><span class='p'>).</span><span class='nx'>attr</span><span class='p'>(</span><span class='s1'>&#39;data-filter&#39;</span><span class='p'>);</span>
+  <span class='nx'>$container</span><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='nx'>selector</span> <span class='p'>});</span>
+  <span class='k'>return</span> <span class='kc'>false</span><span class='p'>;</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='recommended_css'>Recommended CSS</h2>
+
+<p>If you choose to use the filtering functionality, add the following CSS to your stylesheet:</p>
+<div class='highlight'><pre><code class='css'><span class='c'>/**** Isotope filtering ****/</span>
+
+<span class='nc'>.isotope-item</span> <span class='p'>{</span>
+  <span class='k'>z-index</span><span class='o'>:</span> <span class='m'>2</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='nc'>.isotope-hidden.isotope-item</span> <span class='p'>{</span>
+  <span class='k'>pointer</span><span class='o'>-</span><span class='n'>events</span><span class='o'>:</span> <span class='k'>none</span><span class='p'>;</span>
+  <span class='k'>z-index</span><span class='o'>:</span> <span class='m'>1</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>These styles ensure that hidden items will not interfere with interactions.</p>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

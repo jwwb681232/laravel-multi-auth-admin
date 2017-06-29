@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Options &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs option-def">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+        <li class="current"><a href="#content">Options</a>
+          <ul class="toc">
+            
+              <li><a href="#animationengine">animationEngine</a></li>
+            
+              <li><a href="#animationoptions">animationOptions</a></li>
+            
+              <li><a href="#containerclass">containerClass</a></li>
+            
+              <li><a href="#containerstyle">containerStyle</a></li>
+            
+              <li><a href="#filter">filter</a></li>
+            
+              <li><a href="#getsortdata">getSortData</a></li>
+            
+              <li><a href="#hiddenclass">hiddenClass</a></li>
+            
+              <li><a href="#hiddenstyle">hiddenStyle</a></li>
+            
+              <li><a href="#itemclass">itemClass</a></li>
+            
+              <li><a href="#itempositiondataenabled">itemPositionDataEnabled</a></li>
+            
+              <li><a href="#itemselector">itemSelector</a></li>
+            
+              <li><a href="#layoutmode">layoutMode</a></li>
+            
+              <li><a href="#onlayout">onLayout</a></li>
+            
+              <li><a href="#resizable">resizable</a></li>
+            
+              <li><a href="#resizescontainer">resizesContainer</a></li>
+            
+              <li><a href="#sortascending">sortAscending</a></li>
+            
+              <li><a href="#sortby">sortBy</a></li>
+            
+              <li><a href="#transformsenabled">transformsEnabled</a></li>
+            
+              <li><a href="#visiblestyle">visibleStyle</a></li>
+            
+              <li><a href="#layoutspecific_options">Layout-specific options</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Options</h1>
+    
+
+    <dl class='header clearfix'>
+  <dt><code>option</code></dt>
+  <dd class='option-type'>Type</dd>
+  <dd class='default'>Default</dd>
+</dl>
+<h2 id='animationengine'>animationEngine</h2>
+<dl class='clearfix'>
+  <dt><code>animationEngine</code></dt>
+  <dd class='option-type'>String</dd>
+  <dd class='default'><code><span class='s1'>'best-available'</span></code></dd>
+</dl>
+<p>Determines the jQuery method to apply styles, <code>.css()</code> or <code>.animate()</code>. Useful for relying on CSS transitions to handle animation.</p>
+
+<h3 id='animationEngine-values'>Values</h3>
+
+<ul>
+<li><code>&#39;best-available&#39;</code>: if browser supports CSS transitions, Isotope uses <code>.css()</code>. If not, falls back to using <code>.animate()</code>.</li>
+
+<li><code>&#39;css&#39;</code>: Isotope uses <code>.css()</code></li>
+
+<li><code>&#39;jquery&#39;</code>: Isotope uses <code>.animate()</code></li>
+</ul>
+
+<h2 id='animationoptions'>animationOptions</h2>
+<dl class='clearfix'>
+  <dt><code>animationOptions</code></dt>
+  <dd class='option-type'>Object</dd>
+  <dd class='default'><code>{ queue: <span class='kc'>false</span>, duration: <span class='mi'>800</span> }</code></dd>
+</dl>
+<p>When jQuery is the animation engine (see above), these options will be used in <code>.animate()</code>. See the <a href='http://api.jquery.com/animate/#animate-properties-options'>jQuery API for animate options</a> for details.</p>
+
+<h3 id='example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>animationOptions</span><span class='o'>:</span> <span class='p'>{</span>
+     <span class='nx'>duration</span><span class='o'>:</span> <span class='mi'>750</span><span class='p'>,</span>
+     <span class='nx'>easing</span><span class='o'>:</span> <span class='s1'>&#39;linear&#39;</span><span class='p'>,</span>
+     <span class='nx'>queue</span><span class='o'>:</span> <span class='kc'>false</span>
+   <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='containerclass'>containerClass</h2>
+<dl class='clearfix'>
+  <dt><code>containerClass</code></dt>
+  <dd class='option-type'>String</dd>
+  <dd class='default'><code><span class='s1'>'isotope'</span></code></dd>
+</dl>
+<p>The class applied to the container element.</p>
+
+<h2 id='containerstyle'>containerStyle</h2>
+<dl class='clearfix'>
+  <dt><code>containerStyle</code></dt>
+  <dd class='option-type'>Object</dd>
+  <dd class='default'><code>{ position: <span class='s1'>'relative'</span>, overflow: <span class='s1'>'hidden'</span> }</code></dd>
+</dl>
+<p>CSS styles applied to the container element. Relative positioning enables absolute positioning on child items. Hidden overflow ensures that filtered items that lie outside the container do not interfer with subsequent content.</p>
+
+<h2 id='filter'>filter</h2>
+<dl class='clearfix'>
+  <dt><code>filter</code></dt>
+  <dd class='option-type'>Selector</dd>
+</dl>
+<p>Setting a filter with show item elements that match the selector, and hide elements that do not match. See <a href='filtering.html'>docs on filering</a> for more details.</p>
+
+<p><a href='../demos/filtering.html'><strong>See Demo: Filtering</strong></a></p>
+
+<h3 id='filter-values'>Values</h3>
+<ul>
+  <li><code><span class='s1'>'*'</span></code> or <code><span class='s1'>''</span></code> (an empty string): Shows all item elements</li>
+</ul>
+<h2 id='getsortdata'>getSortData</h2>
+<dl class='clearfix'>
+  <dt><code>getSortData</code></dt>
+  <dd class='option-type'>Object</dd>
+</dl>
+<p>An object containing one or several methods to retrieve data for Sorting. The methods receive one parameter (<code>$elem</code> in the example below) which is a jQuery object representing each item element. The methods need to return a value. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
+
+<p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
+
+<h3 id='example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>getSortData</span> <span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>symbol</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='nx'>$elem</span><span class='p'>.</span><span class='nx'>attr</span><span class='p'>(</span><span class='s1'>&#39;data-symbol&#39;</span><span class='p'>);</span>
+    <span class='p'>},</span>
+    <span class='nx'>number</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='nb'>parseInt</span><span class='p'>(</span> <span class='nx'>$elem</span><span class='p'>.</span><span class='nx'>find</span><span class='p'>(</span><span class='s1'>&#39;.number&#39;</span><span class='p'>).</span><span class='nx'>text</span><span class='p'>(),</span> <span class='mi'>10</span> <span class='p'>);</span>
+    <span class='p'>},</span>
+    <span class='nx'>name</span> <span class='o'>:</span> <span class='kd'>function</span> <span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='nx'>$elem</span><span class='p'>.</span><span class='nx'>find</span><span class='p'>(</span><span class='s1'>&#39;.name&#39;</span><span class='p'>).</span><span class='nx'>text</span><span class='p'>();</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='hiddenclass'>hiddenClass</h2>
+<dl class='clearfix'>
+  <dt><code>hiddenClass</code></dt>
+  <dd class='option-type'>String</dd>
+  <dd class='default'><code><span class='s1'>'isotope-hidden'</span></code></dd>
+</dl>
+<p>The class applied to item elements hidden by Filtering.</p>
+
+<h2 id='hiddenstyle'>hiddenStyle</h2>
+<dl class='clearfix'>
+  <dt><code>hiddenStyle</code></dt>
+  <dd class='option-type'>Object</dd>
+  <dd class='default'><code>{ opacity : <span class='mi'>0</span>, scale : <span class='mi'>0.001</span> }</code></dd>
+</dl>
+<p>The style applied to item elements hidden by Filtering.</p>
+
+<h2 id='itemclass'>itemClass</h2>
+<dl class='clearfix'>
+  <dt><code>itemClass</code></dt>
+  <dd class='option-type'>String</dd>
+  <dd class='default'><code><span class='s1'>'isotope-item'</span></code></dd>
+</dl>
+<p>The class applied to item elements.</p>
+
+<h2 id='itempositiondataenabled'>itemPositionDataEnabled</h2>
+<dl class='clearfix'>
+  <dt><code>itemPositionDataEnabled</code></dt>
+  <dd class='option-type'>Boolean</dd>
+  <dd class='default'><code><span class='kc'>false</span></code></dd>
+</dl>
+<p>When enabled, the position of item elements will exposed as data, which you can retrieve with jQuery&#8217;s data method with <code><span class='s1'>'isotope-item-position'</span></code> name space. Position is return as an object with <code>x</code> and <code>y</code>;</p>
+
+<h3 id='example'>Example</h3>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>itemSelector</span><span class='o'>:</span> <span class='s1'>&#39;.element&#39;</span><span class='p'>,</span>
+  <span class='nx'>itemPositionDataEnabled</span><span class='o'>:</span> <span class='kc'>true</span>
+<span class='p'>})</span>
+<span class='c1'>// log position of each item</span>
+<span class='p'>.</span><span class='nx'>find</span><span class='p'>(</span><span class='s1'>&#39;.element&#39;</span><span class='p'>).</span><span class='nx'>each</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+  <span class='kd'>var</span> <span class='nx'>position</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='k'>this</span><span class='p'>).</span><span class='nx'>data</span><span class='p'>(</span><span class='s1'>&#39;isotope-item-position&#39;</span><span class='p'>);</span>
+  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;item position is x: &#39;</span> <span class='o'>+</span> <span class='nx'>position</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>+</span> <span class='s1'>&#39;, y: &#39;</span> <span class='o'>+</span> <span class='nx'>position</span><span class='p'>.</span><span class='nx'>y</span>  <span class='p'>);</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='itemselector'>itemSelector</h2>
+<dl class='clearfix'>
+  <dt><code>itemSelector</code></dt>
+  <dd class='option-type'>Selector</dd>
+</dl>
+<p>Restricts Isotope item elements to selector.</p>
+
+<h2 id='layoutmode'>layoutMode</h2>
+<dl class='clearfix'>
+  <dt><code>layoutMode</code></dt>
+  <dd class='option-type'>String</dd>
+  <dd class='default'><code><span class='s1'>'masonry'</span></code></dd>
+</dl>
+<p>See also docs on <a href='layout-modes.html'>Layout modes</a>.</p>
+
+<p><a href='../demos/layout-modes.html'><strong>See Demo: Layout modes</strong></a></p>
+
+<h2 id='onlayout'>onLayout</h2>
+<dl class='clearfix'>
+  <dt><code>onLayout</code></dt>
+  <dd class='option-type'>Function</dd>
+</dl>
+<p>Similiar to a callback, <code>onLayout</code> is a function that will be triggered after every time an Isotope instance runs through its layout logic.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>onLayout</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elems</span><span class='p'>,</span> <span class='nx'>instance</span> <span class='p'>)</span> <span class='p'>{</span>
+    <span class='c1'>// `this` refers to jQuery object of the container element</span>
+    <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>height</span><span class='p'>()</span> <span class='p'>);</span>
+    <span class='c1'>// callback provides jQuery object of laid-out item elements</span>
+    <span class='nx'>$elems</span><span class='p'>.</span><span class='nx'>css</span><span class='p'>({</span> <span class='nx'>background</span><span class='o'>:</span> <span class='s1'>&#39;blue&#39;</span> <span class='p'>});</span>
+    <span class='c1'>// instance is the Isotope instance</span>
+    <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span> <span class='nx'>instance</span><span class='p'>.</span><span class='nx'>$filteredAtoms</span><span class='p'>.</span><span class='nx'>length</span> <span class='p'>);</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='resizable'>resizable</h2>
+<dl class='clearfix'>
+  <dt><code>resizable</code></dt>
+  <dd class='option-type'>Boolean</dd>
+  <dd class='default'><code><span class='kc'>true</span></code></dd>
+</dl>
+<p>Triggers layout logic when browser window is resized.</p>
+
+<h2 id='resizescontainer'>resizesContainer</h2>
+<dl class='clearfix'>
+  <dt><code>resizesContainer</code></dt>
+  <dd class='option-type'>Boolean</dd>
+  <dd class='default'><code><span class='kc'>true</span></code></dd>
+</dl>
+<p>Isotope will set the height (for vertical layout modes) or width (for horizontal layout modes) of the container after layout. If <code>resizesContainer</code> is set to <code><span class='kc'>false</span></code>, be sure to set a size for the container in your CSS, so it doesn&#8217;t collapse when Isotope is triggered.</p>
+
+<h2 id='sortascending'>sortAscending</h2>
+<dl class='clearfix'>
+  <dt><code>sortAscending</code></dt>
+  <dd class='option-type'>Boolean</dd>
+  <dd class='default'><code><span class='kc'>true</span></code></dd>
+</dl>
+<p>Used with sorting. If true, items are sorted ascending: &#8220;1, 2, 3&#8221; or &#8220;A, B, C&#8230;&#8221;. If false, items are sorted descending &#8220;Z, Y, X&#8221; or &#8220;9, 8, 7&#8230;&#8221;. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
+
+<p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
+
+<h2 id='sortby'>sortBy</h2>
+<dl class='clearfix'>
+  <dt><code>sortBy</code></dt>
+  <dd class='option-type'>String</dd>
+</dl>
+<p>The property name of the method within the <code>getSortData</code> option to sort item elements. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
+
+<p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
+
+<h3 id='sortBy-values'>Values</h3>
+
+<ul>
+<li><code>&#39;original-order&#39;</code> Sorts item elements by their original order.</li>
+</ul>
+
+<h2 id='transformsenabled'>transformsEnabled</h2>
+<dl class='clearfix'>
+  <dt><code>transformsEnabled</code></dt>
+  <dd class='option-type'>Boolean</dd>
+  <dd class='default'><code><span class='kc'>true</span></code></dd>
+</dl>
+<p>Isotope uses CSS3 transforms to position item elements, when available in the browser. Setting <code>transformsEnabled</code> to <code><span class='kc'>false</span></code> will disable this feature so all browsers use top/left absolute positioning. Useful for <a href='help.html#css-transforms'>resolving issues with CSS transforms</a>.</p>
+
+<h3 id='transformsEnabled-css'>Additional CSS</h3>
+
+<p>If you do disable transforms, but still want to use <a href='animating.html#css_transitions'>CSS transitions</a>, you&#8217;ll need add the following CSS:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.isotope</span> <span class='nc'>.isotope-item</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='visiblestyle'>visibleStyle</h2>
+<dl class='clearfix'>
+  <dt><code>visibleStyle</code></dt>
+  <dd class='option-type'>Object</dd>
+  <dd class='default'><code>{ opacity : <span class='mi'>1</span>, scale : <span class='mi'>1</span> }</code></dd>
+</dl>
+<p>The style applied to item elements made visible by Filtering.</p>
+
+<h2 id='layoutspecific_options'>Layout-specific options</h2>
+
+<p>In addition the general options listed above, certain layout modes each have their own options. In order to avoid conflict, these options are set with an option that matches the name of the layout mode.</p>
+
+<p>See docs on <a href='layout-modes.html'>layout modes</a> for each layout mode&#8217;s available options.</p>
+
+<p>For example, if your layout switched from <code>masonry</code> to <code>cellsByRow</code>:</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>masonry</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>columnWidth</span><span class='o'>:</span> <span class='mi'>120</span>
+  <span class='p'>},</span>
+  <span class='nx'>cellsByRow</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>columnWidth</span><span class='o'>:</span> <span class='mi'>220</span><span class='p'>,</span>
+    <span class='nx'>rowHeight</span><span class='o'>:</span> <span class='mi'>220</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<p><a href='../demos/layout-modes.html'><strong>See Demo: Layout modes</strong></a></p>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

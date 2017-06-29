@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Adding items &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+        <li class="current"><a href="#content">Adding items</a>
+          <ul class="toc">
+            
+              <li><a href="#additems_method">addItems method</a></li>
+            
+              <li><a href="#insert_method">insert method</a></li>
+            
+              <li><a href="#appended_method">appended method</a></li>
+            
+              <li><a href="#prepending">Prepending</a></li>
+            
+              <li><a href="#recommended_css">Recommended CSS</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+          <li><a href="../docs/help.html">Help</a>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Adding items</h1>
+    
+
+    <p>If your application dynamically adds new content, Isotope provides several methods to add items.</p>
+
+<p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a>.</p>
+
+<h2 id='additems_method'>addItems method</h2>
+
+<p>The <a href='methods.html#additems'><code>addItems</code> method</a> adds new content to an Isotope container. This applies the proper styles to the items so they can be positioned and any sorting data is retrieved. But that&#8217;s it. The new content will <em>not</em> be filtered, sorted, or positioned properly, nor will it be appended to the container element.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>append</span><span class='p'>(</span> <span class='nx'>$newItems</span> <span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;addItems&#39;</span><span class='p'>,</span> <span class='nx'>$newItems</span> <span class='p'>);</span>
+</code></pre>
+</div>
+<h2 id='insert_method'>insert method</h2>
+
+<p>More likely, you want to use the <a href='methods.html#insert'><code>insert</code> method</a>, which does everything that <code>addItems</code> misses. <code>insert</code> will append the content to the container, filter the new content, sort all the content, then trigger a <code>reLayout</code> so all item elements are properly laid out.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;insert&#39;</span><span class='p'>,</span> <span class='nx'>$newItems</span> <span class='p'>);</span>
+</code></pre>
+</div>
+<h2 id='appended_method'>appended method</h2>
+
+<p>The <a href='methods.html#appended'><code>appended</code> method</a> is a convenience method triggers <code>addItems</code> on new content, then lays out <em>only the new content</em> at the end of the layout. This method is useful if you know you only want to add new content to the end, and <strong>not</strong> use filtering or sorting. <code>appended</code> is the best method to use with Infinite Scroll.</p>
+
+<p><a href='../demos/infinite-scroll.html'><strong>See Demo: Infinite Scroll</strong></a>.</p>
+
+<p>See also <a href='help.html#infinite_scroll_with_filtering_or_sorting'>Infinite Scroll with filtering or sorting</a></p>
+
+<h2 id='prepending'>Prepending</h2>
+
+<p>Because of Isotope&#8217;s sorting functionality, prepending isn&#8217;t as straight forward as might expect. However, it can be replicated fairly easy. After prepending new content to the container, you can re-collect all the item elements and update their sorting order with the <a href='methods.html#reloaditems'><code>reloadItems</code> method</a>. Then trigger a re-layout, with the original DOM order.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>prepend</span><span class='p'>(</span> <span class='nx'>$newItems</span><span class='p'>)</span>
+  <span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;reloadItems&#39;</span> <span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>sortBy</span><span class='o'>:</span> <span class='s1'>&#39;original-order&#39;</span> <span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='recommended_css'>Recommended CSS</h2>
+
+<p>You&#8217;ll need these styles in your CSS for the reveal animation when adding items.</p>
+<div class='highlight'><pre><code class='css'><span class='c'>/**** disabling Isotope CSS3 transitions ****/</span>
+
+<span class='nc'>.isotope.no-transition</span><span class='o'>,</span>
+<span class='nc'>.isotope.no-transition</span> <span class='nc'>.isotope-item</span><span class='o'>,</span>
+<span class='nc'>.isotope</span> <span class='nc'>.isotope-item.no-transition</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>duration</span><span class='o'>:</span> <span class='m'>0s</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

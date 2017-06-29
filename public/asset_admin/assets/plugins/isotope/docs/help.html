@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Help &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="docs ">
+  
+  <nav id="site-nav">
+    <h1><a href="../index.html">Isotope</a></h1>
+
+    <h2>Docs</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+          <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+          <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+          <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+          <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../docs/extending-isotope.html">Extending Isotope</a>
+        
+      
+        
+          <li><a href="../docs/hash-history-jquery-bbq.html">Hash history with jQuery BBQ</a>
+        
+      
+        
+        <li class="current"><a href="#content">Help</a>
+          <ul class="toc">
+            
+              <li><a href="#reporting_bugs_and_issues">Reporting bugs and issues</a></li>
+            
+              <li><a href="#additional_resources">Additional resources</a></li>
+            
+              <li><a href="#unloaded_media">Unloaded media</a></li>
+            
+              <li><a href="#images">Images</a></li>
+            
+              <li><a href="#fontface_fonts">@font-face fonts</a></li>
+            
+              <li><a href="#css-transforms">Problems with CSS transforms</a></li>
+            
+              <li><a href="#getting_item_position">Getting item position</a></li>
+            
+              <li><a href="#accessing_the_instance">Accessing the instance</a></li>
+            
+              <li><a href="#css_transforms_in_opera">CSS transforms in Opera</a></li>
+            
+              <li><a href="#infinite_scroll_with_filtering_or_sorting">Infinite Scroll with filtering or sorting</a></li>
+            
+              <li><a href="#poor_type_rendering_in_webkit">Poor type rendering in WebKit</a></li>
+            
+              <li><a href="#first_item_breaks_masonry_layout">First item breaks Masonry layout</a></li>
+            
+              <li><a href="#righttoleft_layouts">Right-to-left layouts</a></li>
+            
+              <li><a href="#unclickable-filtered">Preventing clicks on filtered items</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+          <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+    <h2>Demos</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../demos/basic.html">Basic</a>
+        
+      
+        
+          <li><a href="../demos/elements-complete.html">Elements Complete</a>
+        
+      
+        
+          <li><a href="../demos/elements-partial.html">Elements Partial</a>
+        
+      
+        
+          <li><a href="../demos/layout-modes.html">Layout modes</a>
+        
+      
+        
+          <li><a href="../demos/filtering.html">Filtering</a>
+        
+      
+        
+          <li><a href="../demos/sorting.html">Sorting</a>
+        
+      
+        
+          <li><a href="../demos/relayout.html">reLayout</a>
+        
+      
+        
+          <li><a href="../demos/adding-items.html">Adding items</a>
+        
+      
+        
+          <li><a href="../demos/infinite-scroll.html">Infinite Scroll</a>
+        
+      
+        
+          <li><a href="../demos/images.html">Images</a>
+        
+      
+        
+          <li><a href="../demos/combination-filters.html">Combination filters</a>
+        
+      
+        
+          <li><a href="../demos/hash-history.html">Hash history</a>
+        
+      
+        
+          <li><a href="../demos/fluid-responsive.html">Fluid / responsive</a>
+        
+      
+        
+          <li><a href="../demos/removing.html">Removing</a>
+        
+      
+    </ul>
+    
+    <h2>Custom layout modes</h2>
+    
+    <ul>
+      
+        
+          <li><a href="../custom-layout-modes/centered-masonry.html">Centered Masonry</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/category-rows.html">Category rows</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-corner-stamp.html">Masonry corner stamp</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-gutters.html">Masonry gutters</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/spine-align.html">Spine align</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/big-graph.html">BIG Graph</a>
+        
+      
+        
+          <li><a href="../custom-layout-modes/masonry-column-shift.html">Masonry Column Shift</a>
+        
+      
+    </ul>
+    
+    <h2><a href="../tests/index.html">Tests</a></h2>
+    
+  </nav> <!-- #site-nav -->
+  
+  <section id="content">
+    
+      <h1>Help</h1>
+    
+
+    <h2 id='reporting_bugs_and_issues'>Reporting bugs and issues</h2>
+
+<p>Please read my <a href='https://github.com/desandro/issues-agreement/#readme'>Issues Agreement</a> and then <a href='http://github.com/desandro/isotope/issues'>report bugs and issues on GitHub</a>.</p>
+
+<h2 id='additional_resources'>Additional resources</h2>
+
+<ul>
+<li>The <a href='http://metafizzy.co/blog/'>Metafizzy blog</a> has posts that cover specialized use cases</li>
+
+<li><a href='http://www.delicious.com/desandro/re:isotope+fiddle'>Various Isotope tests on jsFiddle</a></li>
+
+<li><a href='http://stackoverflow.com/users/182183/desandro?tab=answers'>My answers on Stack Overflow</a></li>
+
+<li><a href='http://zootool.com/user/desandro/tag:isotope'>Sites using Isotope on Zootool</a>, has screenshots</li>
+
+<li><a href='http://www.delicious.com/desandro/using:isotope'>Sites using Isotope on Delicious</a></li>
+
+<li><a href='http://www.delicious.com/desandro/re:isotope'>Miscelleanous Isotope content</a></li>
+</ul>
+
+<h2 id='unloaded_media'>Unloaded media</h2>
+
+<p>Most layout modes (i.e masonry, fitRows) need to measure the size of each item to appropriately account for its space in the layout. Unloaded media files like images and @font-face fonts can throw off layout and cause item elements to overlap one another. Ideally, Isotope layouts should be initialized after all inner content has loaded.</p>
+
+<h2 id='images'>Images</h2>
+
+<h3 id='inline_dimensions'>Inline dimensions</h3>
+
+<p>For images, the best method is to specify the width and height of images inline.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&quot;img-file.jpg&quot;</span> <span class='na'>width=</span><span class='s'>&quot;280&quot;</span> <span class='na'>height=</span><span class='s'>&quot;160&quot;</span> <span class='nt'>/&gt;</span>
+</code></pre>
+</div>
+<p>If you’re using a PHP-based CMS, you can use the <a href='http://php.net/manual/en/function.getimagesize.php'>getimagesize</a> function.</p>
+
+<h3 id='imagesloaded_plugin'>imagesLoaded plugin</h3>
+
+<p>The next best solution is to use the <a href='https://github.com/desandro/imagesloaded'>imagesLoaded plugin</a> included with Isotope. It&#8217;s a small plugin that finds all the images in a context, and fires a callback function once all the images have loaded.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$container</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>);</span>
+
+<span class='nx'>$container</span><span class='p'>.</span><span class='nx'>imagesLoaded</span><span class='p'>(</span> <span class='kd'>function</span><span class='p'>(){</span>
+  <span class='nx'>$container</span><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>({</span>
+    <span class='c1'>// options...</span>
+  <span class='p'>});</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h3 id='id1'><code>$(window).load()</code></h3>
+
+<p>Another solution is to initialize Isotope inside <code>$(window).load()</code> instead of <code>$(document).ready()</code>. This will trigger Isotope after all the media on the page has loaded.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='nb'>window</span><span class='p'>).</span><span class='nx'>load</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+  <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+    <span class='c1'>// options...</span>
+  <span class='p'>});</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='fontface_fonts'>@font-face fonts</h2>
+
+<p>Both Typekit and Google WebFont Loader provide font events to control scripts based on how fonts are loaded.</p>
+
+<ul>
+<li><a href='http://blog.typekit.com/2010/10/18/more-control-with-typekits-font-events/'>Typekit font events</a></li>
+
+<li><a href='http://code.google.com/apis/webfonts/docs/webfont_loader.html#Events'>Google WebFont Loader: Events</a></li>
+</ul>
+
+<h2 id='css-transforms'>Problems with CSS transforms</h2>
+
+<p>As the browser implementations of CSS tranforms are still a work-in-progress, they can cause buggy behavoir with other types of dynamic content.</p>
+<div id='flash' />
+<ul>
+<li><a href='http://dropshado.ws/post/4085720152/css-transforms-breaking-flash'>Flash content in Safari and Firefox</a>, like YouTube or Vimeo videos, Flash ads, or Flash audio players.</li>
+</ul>
+
+<h3 id='disabling_transforms'>Disabling transforms</h3>
+
+<p>Set <a href='options.html#transformsenabled'><code>transformsEnabled</code></a> to <code>false</code>. This is an easy step to take when troubleshooting.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='c1'>// options...</span>
+  <span class='nx'>transformsEnabled</span><span class='o'>:</span> <span class='kc'>false</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='getting_item_position'>Getting item position</h2>
+
+<p>CSS transforms will break previous patterns for getting the position of an item. See the <a href='options.html#itempositiondataenabled'><code>itemPositionDataEnabled</code></a> option for a stop-gap.</p>
+
+<h2 id='accessing_the_instance'>Accessing the instance</h2>
+
+<p><a href='http://docs.jquery.com/UI_Developer_Guide#Internal_functions_.26_scopes_explained'>Similar to jQuery UI</a>, Isotope stores a instance containing properties, settings and methods with jQuery.data. You can access the instance with the <code>&#39;isotope&#39;</code> namespace.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$container</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>);</span>
+
+<span class='c1'>// initialize Isotope instance</span>
+<span class='nx'>$container</span><span class='p'>.</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='c1'>// options...</span>
+<span class='p'>});</span>
+
+<span class='c1'>// get Isotope instance</span>
+<span class='kd'>var</span> <span class='nx'>isotopeInstance</span> <span class='o'>=</span> <span class='nx'>$container</span><span class='p'>.</span><span class='nx'>data</span><span class='p'>(</span><span class='s1'>&#39;isotope&#39;</span><span class='p'>);</span>
+<span class='nx'>isotopeInstance</span><span class='p'>.</span><span class='nx'>options</span><span class='p'>;</span> <span class='c1'>// options</span>
+<span class='nx'>isotopeInstance</span><span class='p'>.</span><span class='nx'>$filteredAtoms</span><span class='p'>;</span> <span class='c1'>// jQuery object of filtered &amp; sorted item elements</span>
+<span class='nx'>isotopeInstance</span><span class='p'>.</span><span class='nx'>masonry</span><span class='p'>.</span><span class='nx'>columnWidth</span><span class='p'>;</span> <span class='c1'>// Layout mode specific properties</span>
+</code></pre>
+</div>
+<h2 id='css_transforms_in_opera'>CSS transforms in Opera</h2>
+
+<p><a href='http://dropshado.ws/post/1260101028/opera-transform-issues'>Using CSS transforms in older versions Opera (&lt; 12) distorts text rendering</a>. See how to enable <a href='options.html#transformsEnabled-css'>CSS transitions with top, left positioning</a>.</p>
+
+<h2 id='infinite_scroll_with_filtering_or_sorting'>Infinite Scroll with filtering or sorting</h2>
+
+<p>I recommend against using Infinite Scroll with filtering or sorting. This combination produces a unnecessarily complex user interaction that will frustrate your users. New content gets added, but part of it might be hidden. There is no way for the user to tell what gets hidden or re-arranged when Infinite Scroll adds more content. Exercise <a href='introduction.html#moderation'>moderation</a> with your Isotope implementation.</p>
+
+<p>If you do plan on implementing Infinite Scroll with filtering or sorting (which is a <em>bad idea</em>), use the <code>insert</code> method instead of <code>appended</code>.</p>
+
+<h2 id='poor_type_rendering_in_webkit'>Poor type rendering in WebKit</h2>
+
+<p>Type rendering may appear poor in WebKit browsers like Chrome and Safari. This is because of Isotope&#8217;s activation of hardware acceleration. A solution is to add add a matching background to the item elements. See more: <a href='http://dropshado.ws/post/6142339613/resolving-anti-aliasing-on-webkit-hardware-accelerated'>dropshado.ws - Resolving anti-aliasing on WebKit hardware-accelerated elements</a>. Another solution is to <a href='#disabling_transforms'>disable transforms</a>.</p>
+
+<h2 id='first_item_breaks_masonry_layout'>First item breaks Masonry layout</h2>
+
+<p>With <a href='layout-modes.html#masonry'>Masonry layout mode</a> If you run into an issue where you re-size the first item, and all the rest of the items no longer fit together in the grid, you most likely need to set <a href='layout-modes.html#masonry-options'><code>columnWidth</code> option</a>. Without <code>columnWidth</code> set, the Masonry layout mode will use the width of the first item for the size of its columns.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span>
+  <span class='nx'>masonry</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='nx'>columnWidth</span><span class='o'>:</span> <span class='mi'>220</span>
+  <span class='p'>}</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='righttoleft_layouts'>Right-to-left layouts</h2>
+
+<p>Isotope can be modified to support right-to-left layouts for languages like Hebrew and Arabic.</p>
+
+<p><a href='../tests/right-to-left.html'><strong>See test: Right to left</strong></a></p>
+
+<p>You&#8217;ll need to make the following changes:</p>
+
+<ul>
+<li>Modify Isotope&#8217;s <code>_positionAbs</code> method</li>
+
+<li>Set <code>transformsEnabled: false</code> in the Isotope options</li>
+
+<li>Add CSS transition property styles for right/top.</li>
+</ul>
+
+<h3 id='javascript_for_righttoleft_support'>JavaScript for right-to-left support</h3>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// modify Isotope&#39;s absolute position method</span>
+<span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>_positionAbs</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>x</span><span class='p'>,</span> <span class='nx'>y</span> <span class='p'>)</span> <span class='p'>{</span>
+  <span class='k'>return</span> <span class='p'>{</span> <span class='nx'>right</span><span class='o'>:</span> <span class='nx'>x</span><span class='p'>,</span> <span class='nx'>top</span><span class='o'>:</span> <span class='nx'>y</span> <span class='p'>};</span>
+<span class='p'>};</span>
+
+<span class='c1'>// initialize Isotope</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+  <span class='nx'>transformsEnabled</span><span class='o'>:</span> <span class='kc'>false</span>
+  <span class='c1'>// other options...</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h3 id='css_for_righttoleft_support'>CSS for right-to-left support</h3>
+<div class='highlight'><pre><code class='css'><span class='nc'>.isotope</span> <span class='nc'>.isotope-item</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>right</span><span class='o'>,</span> <span class='k'>top</span><span class='o'>,</span> <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+     <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>right</span><span class='o'>,</span> <span class='k'>top</span><span class='o'>,</span> <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+      <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>right</span><span class='o'>,</span> <span class='k'>top</span><span class='o'>,</span> <span class='o'>-</span><span class='n'>ms</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+       <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>right</span><span class='o'>,</span> <span class='k'>top</span><span class='o'>,</span> <span class='o'>-</span><span class='err'>o</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+          <span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>right</span><span class='o'>,</span> <span class='k'>top</span><span class='o'>,</span> <span class='n'>transform</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='unclickable-filtered'>Preventing clicks on filtered items</h2>
+
+<p>The <a href='filtering.html#recommended_css'>recommended CSS for filtering</a> includes <code>pointer-events: none</code> for <code>.isotope-hidden</code>. Unfortunately, Opera and Internet Explorer still let click events propagate with this style in place. But you can still dismiss click events in your click handler by checking to see if the element or element&#8217;s parent is a filtered item.</p>
+
+<p><a href='../tests/unclickable-filtered.html'>See test: Unclickable filtered</a></p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;.item a&#39;</span><span class='p'>).</span><span class='nx'>click</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+  <span class='kd'>var</span> <span class='nx'>$this</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='k'>this</span><span class='p'>);</span>
+  <span class='c1'>// back out if hidden item</span>
+  <span class='k'>if</span> <span class='p'>(</span> <span class='nx'>$this</span><span class='p'>.</span><span class='nx'>parents</span><span class='p'>(</span><span class='s1'>&#39;.isotope-item&#39;</span><span class='p'>).</span><span class='nx'>hasClass</span><span class='p'>(</span><span class='s1'>&#39;isotope-hidden&#39;</span><span class='p'>)</span> <span class='p'>)</span> <span class='p'>{</span>
+    <span class='k'>return</span><span class='p'>;</span>
+  <span class='p'>}</span>
+  <span class='c1'>// otherwise, continue to do stuff...</span>
+  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;item was clicked&#39;</span><span class='p'>);</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+    
+    <footer>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+    </footer>
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

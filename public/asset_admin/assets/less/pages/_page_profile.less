@@ -1,0 +1,108 @@
+/* 13.10 Profile Page Setting */
+
+.profile-container {
+    background: #fff;
+    padding: 20px;
+    
+    .border-radius(4px);
+    
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+.profile-left {
+    width: 200px;
+    float: left;
+}
+.profile-right {
+    margin-left: 240px;
+    padding-right: 20px;
+}
+.profile-image {
+    height: 175px;
+    line-height: 175px;
+    text-align: center;
+    font-size: 72px;
+    margin-bottom: 10px;
+    border: 2px solid #E0E0E0;
+    overflow: hidden;
+    .border-radius(4px);
+    
+    & img {
+        display: block;
+        max-width: 100%;
+    }
+}
+.profile-highlight {
+    padding: 12px 15px;
+    background: #FEFDE1;
+    
+    .border-radius(4px);
+    
+    & h4 {
+        margin: 0 0 7px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+.table.table-profile {
+    & > thead > tr > th {
+        border-bottom: none !important;
+
+        & h4 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+        & small {
+            display: block;
+            font-size: 12px;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+    }
+    & > thead > tr > th,
+    & > tbody > tr > td {
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        color: #212121;
+    }
+    & > tbody > tr > td.field {
+        width: 120px;
+        text-align: right;
+        font-weight: 600;
+        color: #777;
+    }
+    & > tbody > tr.highlight > td {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+    }
+    & > tbody > tr.divider > td {
+        padding: 0 !important;
+        height: 10px;
+    }
+}
+.profile-section {
+    & + .profile-section {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #E0E0E0;
+    }
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    & .title {
+        font-size: 20px;
+        margin: 0 0 15px;
+        
+        & small {
+            font-weight: normal;
+        }
+    }
+}

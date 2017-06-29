@@ -1,0 +1,52 @@
+[{ 
+    "id": "demo_root_1_child_1", 
+    "text": "Root #1 Child 1", 
+    "children": [{ 
+        "id": "demo_root_1_child_2", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    }],
+    "state": {
+        "opened": true
+    }
+},{ 
+    "id": "demo_root_1_child_3", 
+    "text": "Root #1 Child 2", 
+    "children": [{ 
+        "id": "demo_root_1_child_4", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    },{ 
+        "id": "demo_root_1_child_5", 
+        "text": "No Child", 
+        "type": "file",
+        "state": {
+            "disabled": true
+        }
+    }],
+    "state": {
+        "opened": true
+    }
+},{ 
+    "id": "demo_root_1_child_6", 
+    "text": "Root #1 Child 3", 
+    "children": [{ 
+        "id": "demo_root_1_child_7", 
+        "text": "One more", 
+        "type": "file" 
+    },{ 
+        "id": "demo_root_1_child_8", 
+        "text": "Custom Icons", 
+        "type": "folder",
+        "icon":  "fa fa-briefcase fa-lg text-inverse"
+    }],
+    "state": {
+        "opened": true
+    }
+}]

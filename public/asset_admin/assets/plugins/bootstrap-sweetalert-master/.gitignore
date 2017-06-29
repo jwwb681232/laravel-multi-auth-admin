@@ -1,0 +1,7 @@
+*.codekit
+*.sass-cache
+*.DS_STORE
+.deploy
+.sass-cache
+node_modules
+bower_components
