@@ -2,11 +2,12 @@
 
 namespace App\Repositories\Eloquent;
 
+use DB;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Contracts\AdminUserRepository as AdminUserRepositoryInterface;
 use App\models\AdminUser;
-
+use Hash;
 /**
  * Class MenuRepositoryEloquent
  * @package namespace App\Repositories\Eloquent;
@@ -53,7 +54,7 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
 
         if ($this->model){
             foreach ($this->model as $item) {
-                $item->button = $item->getActionButtons('adminuser',$item->id);
+                $item->button = $item->getActionButtons('adminuser');
             }
         }
 
@@ -74,6 +75,39 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
         $userModel->save();
         $userModel->attachRole($attr['role']);
         flash('后台用户新增成功', 'success');
+    }
+
+    public function editViewData($id)
+    {
+        $user = $this->find($id,['id','name','email']);
+        $userRole = DB::table('role_admin')->where('user_id',$id)->first();
+        if ($user){
+            return compact('user','userRole');
+        }
+        abort(404);
+    }
+
+    public function updateAdminUser(array $attr, $id)
+    {
+        $adminUser = $this->find($id);
+        if (!Hash::check($attr['old_password'], $adminUser->password)) {
+            abort(500, '原密码不正确！');
+        }
+        $roleId = $attr['role'];
+        unset($attr['role']);
+        $res = $this->update($attr, $id);
+        $userRole = DB::table('role_admin')->where('user_id', '=', $id)->first();
+        if ($userRole) {
+            DB::table('role_admin')->where('user_id', '=', $id)->update(['role_id' => $roleId]);
+        } else {
+            DB::table('role_admin')->insert(['user_id' => $id, 'role_id' => $roleId]);
+        }
+        if ($res) {
+            flash('修改成功!', 'success');
+        } else {
+            flash('修改失败!', 'error');
+        }
+        return $res;
     }
 
 

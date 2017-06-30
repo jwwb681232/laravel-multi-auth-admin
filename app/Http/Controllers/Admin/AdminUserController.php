@@ -70,7 +70,9 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        echo 1;
+        $userData = $this->adminUser->editViewData($id);
+        $roles = $this->role->all(['id','display_name']);
+        return view('admin.adminuser.edit',compact('roles','userData'));
     }
 
     /**
@@ -79,9 +81,10 @@ class AdminUserController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($request, $id)
+    public function update(AdminUserRequest $request, $id)
     {
-
+        $this->adminUser->updateAdminUser($request->all(),$id);
+        return redirect('admin/adminuser');
     }
 
     /**

@@ -20,10 +20,10 @@ class CheckPermission{
             default : break;
         }
         if (!$permission){
-            abort(500,trans('系统没有权限，请修改权限验证中间件\\App\\Http\\Middleware\\CheckPermission！'));
+            abort(500,'系统没有权限，请修改权限验证中间件\\App\\Http\\Middleware\\CheckPermission！');
         }
         if (!$request->user('admin')->can($permission)){
-            abort(500,trans('您没有权限进行此次操作！'));
+            abort(500,'您没有权限进行此次操作！');
         }
         return $next($request);
     }
