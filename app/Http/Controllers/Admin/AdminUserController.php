@@ -14,6 +14,7 @@ class AdminUserController extends Controller
     public $role;
     public function __construct(AdminUserRepository $adminUserRepository,RoleRepositoryEloquent $roleRepository)
     {
+        $this->middleware('CheckPermission:adminuser');
         $this->adminUser = $adminUserRepository;
         $this->role = $roleRepository;
     }

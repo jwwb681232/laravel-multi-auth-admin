@@ -3,13 +3,13 @@
 Route::group(['middleware' => ['auth:admin']], function ($router) {
     $router->get('/', ['uses' => 'AdminController@index','as' => 'admin.index']);
 
+    $router->resource('index', 'IndexController');
+
     //目录
     $router->resource('menus', 'MenuController');
 
-    $router->resource('index', 'IndexController');
-
     //后台用户
-    $router->get('adminuser/ajaxIndex','AdminUserController@ajaxIndex');
+    $router->get('adminuser/ajaxIndex',['uses'=>'AdminUserController@ajaxIndex','as'=>'admin.adminuser.ajaxIndex']);
     $router->resource('adminuser', 'AdminUserController');
 
     //权限管理

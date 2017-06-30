@@ -11,6 +11,7 @@ class MenuController extends Controller
 
     public function __construct(MenuRepository $menuRepository)
     {
+        $this->middleware('CheckPermission:menus');
         $this->menu = $menuRepository;
     }
     /**
