@@ -41,8 +41,8 @@
                             <thead>
                             <tr>
                                 <th>id</th>
-                                <th>名称</th>
                                 <th>权限</th>
+                                <th>名称</th>
                                 <th>描述</th>
                                 <th>添加时间</th>
                                 <th>更新时间</th>
