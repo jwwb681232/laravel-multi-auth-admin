@@ -44,8 +44,13 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepositoryInt
 
     public function getAll($columns = ['*'])
     {
-        $list = $this->all($columns)->toArray();
-        return $this->sortList($list);
+        $res = $this->all($columns)->toArray();
+        $list = $this->sortList($res);
+        foreach ($list as $key => $value) {
+            $list[$key]['button'] = $this->model->getActionButtons('menus',$value['id']);
+        }
+        return $list;
+
     }
 
     public function getMenuComposerData()

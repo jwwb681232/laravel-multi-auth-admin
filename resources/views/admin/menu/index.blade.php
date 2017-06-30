@@ -33,9 +33,13 @@
                         <h4 class="panel-title">列表</h4>
                     </div>
                     <div class="panel-body">
+                        {{--@permission('menus.add')--}}
+                        @if(auth('admin')->user()->can('menus.add'))
                         <a href="{{ url('admin/menus/create') }}">
                             <button type="button" class="btn btn-primary m-r-5 m-b-5"><i class="fa fa-plus-square-o"></i> 新增</button>
                         </a>
+                        @endif
+                        {{--@endpermission--}}
                         <table class="table table-bordered table-hover" id="treeTable">
                             <thead>
                             <tr>
@@ -53,16 +57,7 @@
                                 <td>{{ $menu['url'] }}</td>
                                 <td>{{ $menu['slug'] }}</td>
                                 <td>{{ $menu['updated_at'] }}</td>
-                                <td>
-                                    <a href="{{ url('admin/menus').'/'.$menu['id'].'/edit' }}"><button type="button" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i> 编辑</button></a>
-                                    <a href="javascript:;" data-id='{{ $menu['id'] }}' class="btn btn-danger btn-xs destroy">
-                                        <i class="fa fa-trash"> 删除</i>
-                                        <form action='{{ url('admin/menus/'.$menu['id']) }}' method="POST"  name="delete_item_{{ $menu['id'] }}"  style="display:none">
-                                            {{ method_field('DELETE') }}
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </a>
-                                </td>
+                                <td>{!! $menu['button'] !!}</td>
                             </tr>
                             @endforeach
                             </tbody>
