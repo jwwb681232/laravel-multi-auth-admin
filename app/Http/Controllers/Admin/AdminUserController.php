@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\Eloquent\RoleRepositoryEloquent;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdminUserRequest;
 use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\AdminUserRepositoryEloquent as AdminUserRepository;
 
 class AdminUserController extends Controller
 {
     public $adminUser;
-
-    public function __construct(AdminUserRepository $adminUserRepository)
+    public $role;
+    public function __construct(AdminUserRepository $adminUserRepository,RoleRepositoryEloquent $roleRepository)
     {
         $this->adminUser = $adminUserRepository;
+        $this->role = $roleRepository;
     }
 
     /**
@@ -32,7 +35,8 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-
+        $roles = $this->role->all(['id','display_name']);
+        return view('admin.adminuser.create',compact('roles'));
     }
 
     /**
@@ -40,9 +44,10 @@ class AdminUserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store($request)
+    public function store(AdminUserRequest $request)
     {
-
+        $this->adminUser->createAdminUser($request->all());
+        return redirect('admin/adminuser');
     }
 
     /**

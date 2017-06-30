@@ -50,22 +50,24 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
         $count = $this->model->count();
         $this->model = $this->model->orderBy($order['name'],$order['dir']);
         $this->model = $this->model->offset($start)->limit($length)->get();
-
-        //添加自定义列
-        /*if ($this->model){
-            foreach ($this->model as $item) {
-                $item->actionButton = $item->getActionButton();
-                //todo 不得已而为之
-                $item->cat_name = Article::find($item->id)->blog_category->name;
-                $item->user_name = Article::find($item->id)->user->name;
-            }
-        }*/
+        
         return [
             'draw'=>$draw,
             'recordsTotal' =>$count,
             'recordsFiltered' => $count,
             'data' =>$this->model
         ];
+    }
+
+    public function createAdminUser(array $attr)
+    {
+        $userModel = new AdminUser();
+        $userModel->email = $attr['email'];
+        $userModel->name = $attr['name'];
+        $userModel->password = bcrypt($attr['password']);
+        $userModel->save();
+        $userModel->attachRole($attr['role']);
+        flash('后台用户新增成功', 'success');
     }
 
 
