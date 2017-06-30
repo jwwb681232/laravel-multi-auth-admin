@@ -50,7 +50,13 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
         $count = $this->model->count();
         $this->model = $this->model->orderBy($order['name'],$order['dir']);
         $this->model = $this->model->offset($start)->limit($length)->get();
-        
+
+        if ($this->model){
+            foreach ($this->model as $item) {
+                $item->button = $item->getActionButtons('adminuser',$item->id);
+            }
+        }
+
         return [
             'draw'=>$draw,
             'recordsTotal' =>$count,

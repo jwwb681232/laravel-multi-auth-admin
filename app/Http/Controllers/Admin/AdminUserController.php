@@ -70,7 +70,7 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-
+        echo 1;
     }
 
     /**
