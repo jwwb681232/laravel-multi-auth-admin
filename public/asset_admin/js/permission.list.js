@@ -36,41 +36,13 @@ $(document).ready(function () {
         },
         'aLengthMenu':[50,100],
         "columns": [
-            {
-                "data": "id",
-                "name" : "id"
-            },
-            {
-                "data": "name",
-                "name" : "name",
-                "orderable" : false
-            },
-            {
-                "data": "display_name",
-                "name": "display_name",
-                "orderable" : false
-            },
-            {
-                "data": "description",
-                "name": "description",
-                "orderable" : false
-            },
-            {
-                "data": "created_at",
-                "name": "created_at",
-                "orderable" : true
-            },
-            {
-                "data": "updated_at",
-                "name": "updated_at",
-                "orderable" : true
-            },
-            {
-                "data": "button",
-                "name": "button",
-                'type':'html',
-                "orderable" : false
-            }
+            {"data": "id","name" : "id"},
+            {"data": "name","name" : "name","orderable" : false},
+            {"data": "display_name","name": "display_name","orderable" : false},
+            {"data": "description","name": "description","orderable" : false},
+            {"data": "created_at","name": "created_at","orderable" : true},
+            {"data": "updated_at","name": "updated_at","orderable" : true},
+            {"data": "button","name": "button",'type':'html',"orderable" : false}
         ]
     });
 
