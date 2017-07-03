@@ -2,6 +2,8 @@
 
 namespace App\Repositories\Eloquent;
 
+use DB;
+use App\Models\Permission;
 use App\Models\Role;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -52,6 +54,13 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepositoryInt
         $count = $this->model->count();
         $this->model = $this->model->orderBy($order['name'],$order['dir']);
         $this->model = $this->model->offset($start)->limit($length)->get();
+
+        if ($this->model) {
+            foreach ($this->model as $item) {
+                $item->button = $item->getActionButtons('role');
+            }
+        }
+
         return [
             'draw'              =>$draw,
             'recordsTotal'      =>$count,
@@ -78,6 +87,46 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepositoryInt
         //} else {
         //    flash('角色新增失败', 'error');
         //}
+        return $res;
+    }
+
+    /**
+     * 编辑页面所需要的数据
+     * @param   int     $id
+     * @return  array
+     */
+    public function editViewData($id)
+    {
+        //$rolePermission = $role->permissions->toArray();
+        
+        $role = $this->model->find($id,['id','name','display_name','description'])->toArray();
+        
+        $rolePermissionList = DB::table('permission_role')->where('role_id',$id)->get(['permission_id']);
+        $getRolePermissionClosure = function($permissionList){
+            $res = array();
+            foreach ($permissionList as $key=>$value) {
+                $res[] = $value->permission_id;
+            }
+            return $res;
+        };
+
+        $rolePermission = $getRolePermissionClosure($rolePermissionList);
+        
+        $permissions = Permission::all(['id','display_name'])->toArray();
+
+        return compact('role','rolePermission','permissions');
+    }
+
+    public function updateRole(array $attr, $id)
+    {
+        $permissions = $attr['permission'];
+        unset($attr['permission']);
+        $res = $this->find($id)->perms()->sync($permissions);
+        if ($res) {
+            flash('修改成功!', 'success');
+        } else {
+            flash('修改失败!', 'error');
+        }
         return $res;
     }
 

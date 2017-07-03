@@ -34,9 +34,11 @@
                         <h4 class="panel-title">列表</h4>
                     </div>
                     <div class="panel-body">
+                        @if(auth('admin')->user()->can('role.add'))
                         <a href="{{ url('admin/role/create') }}">
                             <button type="button" class="btn btn-primary m-r-5 m-b-5"><i class="fa fa-plus-square-o"></i> 新增</button>
                         </a>
+                        @endif
                         <table class="table table-bordered table-hover" id="datatable">
                             <thead>
                             <tr>
@@ -46,6 +48,7 @@
                                 <th>描述</th>
                                 <th>添加时间</th>
                                 <th>更新时间</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                         </table>

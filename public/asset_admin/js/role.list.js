@@ -63,6 +63,12 @@ $(document).ready(function () {
                 "data": "updated_at",
                 "name": "updated_at",
                 "orderable" : true
+            },
+            {
+                "data": "button",
+                "name": "button",
+                'type':'html',
+                "orderable" : false
             }
         ]
     });

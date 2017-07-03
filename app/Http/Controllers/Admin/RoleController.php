@@ -15,6 +15,7 @@ class RoleController extends Controller
     public $permission;
     public function __construct(RoleRepository $roleRepository,PermissionRepository $permissionRepository)
     {
+        $this->middleware('CheckPermission:role');
         $this->role = $roleRepository;
         $this->permission = $permissionRepository;
     }
@@ -70,18 +71,20 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-
+        $data = $this->role->editViewData($id);
+        return view('admin.role.edit',compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
-     * @param MenuRequest $request
+     * @param RoleRequest $request
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($request, $id)
+    public function update(RoleRequest $request, $id)
     {
-
+        $this->role->updateRole($request->all(),$id);
+        return redirect('admin/role');
     }
 
     /**
