@@ -52,6 +52,13 @@ class PermissionRepositoryEloquent extends BaseRepository implements PermissionR
         $count = $this->model->count();
         $this->model = $this->model->orderBy($order['name'],$order['dir']);
         $this->model = $this->model->offset($start)->limit($length)->get();
+
+        if ($this->model) {
+            foreach ($this->model as $item) {
+                $item->button = $item->getActionButtons('permission');
+            }
+        }
+
         return [
             'draw'              =>$draw,
             'recordsTotal'      =>$count,
@@ -72,6 +79,17 @@ class PermissionRepositoryEloquent extends BaseRepository implements PermissionR
             flash('权限新增成功', 'success');
         } else {
             flash('权限新增失败', 'error');
+        }
+        return $res;
+    }
+
+    public function updatePermission(array $attr, $id)
+    {
+        $res = $this->update($attr,$id);
+        if ($res) {
+            flash('修改成功!', 'success');
+        } else {
+            flash('修改失败!', 'error');
         }
         return $res;
     }

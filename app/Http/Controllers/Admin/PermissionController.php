@@ -13,6 +13,7 @@ class PermissionController extends Controller
 
     public function __construct(PermissionRepository $permissionRepository)
     {
+        $this->middleware('CheckPermission:permission');
         $this->permission = $permissionRepository;
     }
 
@@ -66,7 +67,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-
+        $permission = $this->permission->find($id,['id','name','display_name','description'])->toArray();
+        return view('admin.permission.edit',compact('permission'));
     }
 
     /**
@@ -75,9 +77,10 @@ class PermissionController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($request, $id)
+    public function update(PermissionRequest $request, $id)
     {
-
+        $this->permission->updatePermission($request->all(),$id);
+        return redirect('admin/permission');
     }
 
     /**

@@ -13,11 +13,11 @@ Route::group(['middleware' => ['auth:admin']], function ($router) {
     $router->resource('adminuser', 'AdminUserController');
 
     //权限管理
-    $router->get('permission/ajaxIndex','PermissionController@ajaxIndex');
+    $router->get('permission/ajaxIndex',['uses'=>'PermissionController@ajaxIndex','as'=>'admin.permission.ajaxIndex']);
     $router->resource('permission', 'PermissionController');
 
     //角色管理
-    $router->get('role/ajaxIndex','RoleController@ajaxIndex');
+    $router->get('role/ajaxIndex',['uses'=>'RoleController@ajaxIndex','as'=>'admin.role.ajaxIndex']);
     $router->resource('role', 'RoleController');
 });
 
