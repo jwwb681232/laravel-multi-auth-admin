@@ -8,6 +8,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Contracts\AdminUserRepository as AdminUserRepositoryInterface;
 use App\models\AdminUser;
 use Hash;
+
 /**
  * Class MenuRepositoryEloquent
  * @package namespace App\Repositories\Eloquent;
@@ -34,35 +35,36 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
 
     public function ajaxIndex($request)
     {
-        $draw = $request->input('draw',1);
-        $start = $request->input('start',0);
-        $length = $request->input('length',10);
-        $order['name'] = $request->input('columns.' .$request->input('order.0.column') . '.name');
-        $order['dir'] = $request->input('order.0.dir','asc');
-        $search['value'] = $request->input('search.value','');
-        $search['regex'] = $request->input('search.regex',false);
-        if ($search['value']){
-            if ($search['regex'] == 'true'){//传过来的是字符串不能用bool值比较
-                $this->model = $this->model->where('email','like',"%{$search['value']}%");
-            }else{
-                $this->model = $this->model->where('email',$search['value']);
+        $draw = $request->input('draw', 1);
+        $start = $request->input('start', 0);
+        $length = $request->input('length', 10);
+        $order['name'] = $request->input('columns.' . $request->input('order.0.column') . '.name');
+        $order['dir'] = $request->input('order.0.dir', 'asc');
+        $search['value'] = $request->input('search.value', '');
+        $search['regex'] = $request->input('search.regex', false);
+        if ($search['value']) {
+            if ($search['regex'] == 'true') {//传过来的是字符串不能用bool值比较
+                $this->model = $this->model->where('email', 'like', "%{$search['value']}%");
+            } else {
+                $this->model = $this->model->where('email', $search['value']);
             }
         }
         $count = $this->model->count();
-        $this->model = $this->model->orderBy($order['name'],$order['dir']);
+        $this->model = $this->model->orderBy($order['name'], $order['dir']);
         $this->model = $this->model->offset($start)->limit($length)->get();
 
-        if ($this->model){
+        if ($this->model) {
             foreach ($this->model as $item) {
                 $item->button = $item->getActionButtons('adminuser');
+                $item->role = $item->roles->toArray()[0]['display_name'];//获取关联的角色
             }
         }
 
         return [
-            'draw'=>$draw,
-            'recordsTotal' =>$count,
+            'draw' => $draw,
+            'recordsTotal' => $count,
             'recordsFiltered' => $count,
-            'data' =>$this->model
+            'data' => $this->model
         ];
     }
 
@@ -79,10 +81,10 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
 
     public function editViewData($id)
     {
-        $user = $this->find($id,['id','name','email']);
-        $userRole = DB::table('role_admin')->where('user_id',$id)->first();
-        if ($user){
-            return compact('user','userRole');
+        $user = $this->find($id, ['id', 'name', 'email']);
+        $userRole = DB::table('role_admin')->where('user_id', $id)->first();
+        if ($user) {
+            return compact('user', 'userRole');
         }
         abort(404);
     }

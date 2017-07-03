@@ -50,6 +50,11 @@ $(document).ready(function () {
                 "orderable" : false
             },
             {
+                "data": "role",
+                "name": "role",
+                "orderable" : false
+            },
+            {
                 "data": "created_at",
                 "name": "created_at",
                 "orderable" : true

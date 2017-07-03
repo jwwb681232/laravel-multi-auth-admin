@@ -43,6 +43,7 @@
                                 <th>id</th>
                                 <th>名称</th>
                                 <th>邮箱</th>
+                                <th>角色</th>
                                 <th>添加时间</th>
                                 <th>更新时间</th>
                                 <th>操作</th>

@@ -24,4 +24,9 @@ class Admin extends User
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(\App\Models\Role::class,'role_admin','user_id');
+    }
 }
