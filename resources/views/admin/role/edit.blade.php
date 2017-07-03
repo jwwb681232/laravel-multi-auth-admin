@@ -16,7 +16,7 @@
         </ol>
         <!-- end breadcrumb -->
         <!-- begin page-header -->
-        <h1 class="page-header">新增角色 <small>header small text goes here...</small></h1>
+        <h1 class="page-header">修改角色 <small>header small text goes here...</small></h1>
         <!-- end page-header -->
 
         <!-- begin row -->
