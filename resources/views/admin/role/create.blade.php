@@ -67,9 +67,14 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2 col-sm-2" for="description">权限 * :</label>
                                 <div class="col-md-6 col-sm-6">
+                                    <p>
+                                        <a href="javascript:checkAll();" class="btn btn-sm btn-primary m-r-5"><i class="fa fa-check"></i> 全选</a>
+                                        <a href="javascript:checkReverse();" class="btn btn-sm btn-inverse m-r-5"><i class="fa fa-magic"></i> 反选</a>
+                                    </p>
+                                    <hr>
                                     @foreach($permission as $key=>$value)
                                     <div class="col-md-3 col-sm-3">
-                                        <input type="checkbox" name="permission[]" data-render="switchery" data-theme="purple" value="{{ $value->id }}"/> {{ $value->display_name }}
+                                        <input type="checkbox" checked="checked" name="permission[]" data-render="switchery" data-theme="purple" value="{{ $value->id }}"/> {{ $value->display_name }}
                                     </div>
                                     @endforeach
                                 </div>
@@ -122,6 +127,20 @@
                     var switchery = new Switchery(this, option);
                 });
             }
+        }
+
+        //全选
+        function checkAll(){
+            $("input[type=checkbox]").each(function() {
+                if(!this.checked) this.click();
+            });
+        }
+
+        //反选
+        function checkReverse() {
+            $("input[type=checkbox]").each(function() {
+                this.click();
+            });
         }
     </script>
 @endsection
