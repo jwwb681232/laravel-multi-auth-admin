@@ -171,6 +171,11 @@ return [
          * RBAC
          */
         Zizaco\Entrust\EntrustServiceProvider::class,
+
+        /**
+         * laravel-debugbar
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -221,6 +226,11 @@ return [
          * RBAC
          */
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+        /**
+         * laravel-debugbar
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

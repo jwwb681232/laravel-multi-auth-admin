@@ -55,7 +55,7 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepositoryInt
 
     public function getMenuComposerData()
     {
-        return $this->sortTreeList($this->sortList($this->getAll()));
+        return $this->sortTreeList($this->sortList($this->getAll(['id','name','url','slug','parent_id'])));
     }
 
     /**

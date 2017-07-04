@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "prettus/l5-repository": "^2.6",
         "laracasts/flash": "^2.0",
-        "league/fractal": "^0.16.0"
+        "league/fractal": "^0.16.0",
+        "barryvdh/laravel-debugbar": "^2.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
