@@ -33,14 +33,16 @@
                 @if(isset($adminMenu['child']))
                 <ul class="sub-menu">
                     @foreach($adminMenu['child'] as $menus)
-                    <li class="has-sub @if($menus['url'] == Request::path()) active @endif">
-                        <a href="{{ url($menus['url']) }}">
-                            @if(isset($menus['child']))
-                                <b class="caret pull-right"></b>
-                            @endif
-                            {{ $menus['name'] }}
-                        </a>
-                    </li>
+                        @if(auth('admin')->user()->can($menus['slug']))
+                            <li class="has-sub @if($menus['url'] == Request::path()) active @endif">
+                                <a href="{{ url($menus['url']) }}">
+                                    @if(isset($menus['child']))
+                                        <b class="caret pull-right"></b>
+                                    @endif
+                                    {{ $menus['name'] }}
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
                 @endif
