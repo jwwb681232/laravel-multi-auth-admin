@@ -25,8 +25,9 @@ class AdminUserRequest extends Request
         return [
             'email'=>'required|email',
             'name'=>'required',
-            'password'=>'required|confirmed',
-            'password_confirmation'=>'required',
+            //'password'=>'required|confirmed',
+            'password'=>'confirmed',
+            //'password_confirmation'=>'required',
             'role'=>'required'
         ];
     }
@@ -37,7 +38,7 @@ class AdminUserRequest extends Request
             'email.required'=>'请输入邮箱',
             'email.email'=>'请输入正确的邮箱',
             'name.required' => '请输入姓名',
-            'password.required' => '请输密码',
+            //'password.required' => '请输密码',
             'role.required'=>'请选择角色'
         ];
     }

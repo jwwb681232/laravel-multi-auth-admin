@@ -15,7 +15,7 @@
         </ol>
         <!-- end breadcrumb -->
         <!-- begin page-header -->
-        <h1 class="page-header">新增后台用户 <small>header small text goes here...</small></h1>
+        <h1 class="page-header">修改后台用户 <small>header small text goes here...</small></h1>
         <!-- end page-header -->
 
         <!-- begin row -->
@@ -61,19 +61,19 @@
                             <div class="form-group">
                                 <label class="control-label col-md-4 col-sm-4" for="old_password">原密码 * :</label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="text" name="old_password" placeholder="密码" data-parsley-length="[6,12]" data-parsley-length-message="密码长度6~12字符" data-parsley-required="true" data-parsley-required-message="请输入原密码" value="{{ old('old_password') }}"/>
+                                    <input class="form-control" type="text" name="old_password" placeholder="密码" data-parsley-length="[6,12]" data-parsley-length-message="密码长度6~12字符" value="{{ old('old_password') }}"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-4 col-sm-4" for="password">新密码 * :</label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" id="password" type="text" name="password" placeholder="密码" data-parsley-length="[6,12]" data-parsley-length-message="密码长度6~12字符" data-parsley-required="true" data-parsley-required-message="请输入新密码" value="{{ old('password') }}"/>
+                                    <input class="form-control" id="password" type="text" name="password" placeholder="密码" data-parsley-length="[6,12]" data-parsley-length-message="密码长度6~12字符" value="{{ old('password') }}"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-4 col-sm-4" for="password">确认密码 * :</label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="text" name="password_confirmation" placeholder="确认密码" data-parsley-length="[6,12]" data-parsley-length-message="密码长度6~12字符" data-parsley-required="true" data-parsley-required-message="请确认密码" data-parsley-equalto="#password" data-parsley-equalto-message="两次密码输入不一致" value="{{ old('password_confirmation') }}"/>
+                                    <input class="form-control" type="text" name="password_confirmation" placeholder="确认密码" data-parsley-length="[6,12]" data-parsley-length-message="密码长度6~12字符" data-parsley-equalto="#password" data-parsley-equalto-message="两次密码输入不一致" value="{{ old('password_confirmation') }}"/>
                                 </div>
                             </div>
                             <div class="form-group">

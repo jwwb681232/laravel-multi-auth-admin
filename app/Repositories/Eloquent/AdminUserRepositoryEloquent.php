@@ -92,12 +92,16 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
     public function updateAdminUser(array $attr, $id)
     {
         $adminUser = $this->find($id);
-        if (!Hash::check($attr['old_password'], $adminUser->password)) {
+        if ($attr['old_password'] && !Hash::check($attr['old_password'], $adminUser->password)) {
             abort(500, '原密码不正确！');
         }
         $roleId = $attr['role'];
-        unset($attr['role']);
+        if (empty($attr['password'])) {
+            unset($attr['password']);
+        }
+        $attr['password'] = bcrypt($attr['password']);
         $res = $this->update($attr, $id);
+
         $userRole = DB::table('role_admin')->where('user_id', '=', $id)->first();
         if ($userRole) {
             DB::table('role_admin')->where('user_id', '=', $id)->update(['role_id' => $roleId]);
