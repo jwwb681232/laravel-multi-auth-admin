@@ -121,7 +121,7 @@
                 <li class="dropdown navbar-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('asset_admin/assets/img/user-3.jpg') }}" alt="" />
-                        <span class="hidden-xs">{{ auth('admin')->user()->email }}</span> <b class="caret"></b>
+                        <span class="hidden-xs">{{ auth('admin')->user()->name }}</span> <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu animated fadeInLeft">
                         <li class="arrow"></li>
