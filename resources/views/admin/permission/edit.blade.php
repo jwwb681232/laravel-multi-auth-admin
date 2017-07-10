@@ -82,5 +82,5 @@
 @endsection
 
 @section('admin-js')
-    {{--<script src="{{ asset('asset_admin/assets/plugins/parsley/dist/parsley.js') }}"></script>--}}
+    <script src="{{ asset('asset_admin/assets/plugins/parsley/dist/parsley.js') }}"></script>
 @endsection
