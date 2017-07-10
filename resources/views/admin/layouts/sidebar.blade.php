@@ -9,15 +9,14 @@
                     <a href="javascript:;"><img src="{{ asset('asset_admin/assets/img/user-13.jpg') }}" alt="" /></a>
                 </div>
                 <div class="info">
-                    Sean Ngu
-                    <small>Front end developer</small>
+                    {{ auth('admin')->user()->name }}
+                    <small>{{ auth('admin')->user()->email }}</small>
                 </div>
             </li>
         </ul>
         <!-- end sidebar user -->
         <!-- begin sidebar nav -->
         <ul class="nav">
-            <li class="nav-header">Navigation</li>
             @foreach($adminMenus as $adminMenu)
             @if(auth('admin')->user()->can($adminMenu['slug']))
             <li class="has-sub">

@@ -30,7 +30,7 @@ class AuthController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return User
+     * @return Admin
      */
     protected function create(array $data)
     {
@@ -49,5 +49,11 @@ class AuthController extends Controller
     public function getRegister()
     {
         return view('admin.auth.register');
+    }
+
+    public function logout()
+    {
+        auth('admin')->logout();
+        return redirect('admin/login');
     }
 }

@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <!-- begin mobile sidebar expand / collapse button -->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand"><span class="navbar-logo"></span> Color Admin</a>
+                <a href="{{ url('admin') }}" class="navbar-brand"><span class="navbar-logo"></span> Color Admin</a>
                 <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -130,7 +130,7 @@
                         <li><a href="javascript:;">Calendar</a></li>
                         <li><a href="javascript:;">Setting</a></li>
                         <li class="divider"></li>
-                        <li><a href="javascript:;">Log Out</a></li>
+                        <li><a href="{{ url('admin/logout') }}">Log Out</a></li>
                     </ul>
                 </li>
             </ul>
