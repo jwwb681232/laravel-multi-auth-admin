@@ -10,7 +10,7 @@ class CreateUsersTables extends Migration
 
     /**
      * Add the ability to run certain functions
-     * on multiple tables
+     * @param Closure $action
      */
     protected function eachTable(Closure $action)
     {
