@@ -14,15 +14,21 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         Admin::create([
-            'name' => 'Admin Istrator',
+            'name' => 'Administrator',
             'email' => 'admin@admin.com',
-            'password' => 'password',
+            'password' => 'admin',
+        ]);
+
+        Admin::create([
+            'name' => 'Editor',
+            'email' => 'editor@editor.com',
+            'password' => 'editor',
         ]);
 
         User::create([
-            'name' => 'End User',
-            'email' => 'user@user.com',
-            'password' => 'password',
+            'name' => 'UserName',
+            'email' => 'username@username.com',
+            'password' => 'username',
         ]);
     }
 }
