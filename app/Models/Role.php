@@ -16,10 +16,10 @@ class Role extends EntrustRole
     public function admins ()
     {
         // 多对多的关系（一个角色赋予了多个用户）
-        return $this->belongsToMany(\App\Models\Admin::class,'admins','id');
+        return $this->belongsToMany(Admin::class,'admins','id');
     }
 
     public function permissions(){
-        return $this->belongsToMany(\App\Models\Permission::class,'permission_role');
+        return $this->belongsToMany(Permission::class,'permission_role');
     }
 }
