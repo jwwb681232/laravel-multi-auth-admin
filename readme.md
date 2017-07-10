@@ -4,6 +4,8 @@
 ![image1](http://7xuntv.com1.z0.glb.clouddn.com/zhanghaobao1.png)
 
 ![image2](http://7xuntv.com1.z0.glb.clouddn.com/zhanghaobao2.png)
+
+![image3](http://7xuntv.com1.z0.glb.clouddn.com/zhanghaobao3.png)
 # 安装
 
 ## 克隆资源库
