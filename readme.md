@@ -1,6 +1,9 @@
 # zhanghaobao
 > 包含前后台登录认证的后台管理系统，模板为`color admin`
 
+![image1](http://7xuntv.com1.z0.glb.clouddn.com/zhanghaobao1.png)
+
+![image2](http://7xuntv.com1.z0.glb.clouddn.com/zhanghaobao2.png)
 # 安装
 
 ## 克隆资源库
