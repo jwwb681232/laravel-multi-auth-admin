@@ -24,7 +24,10 @@ cp .env.example .env
 php artisan key:generate
 ```
 ## 设置数据库
+编辑`.env`文件
 ```shell
+CACHE_DRIVER=array
+
 DB_HOST=YOUR_DATABASE_HOST
 DB_DATABASE=YOUR_DATABASE_NAME
 DB_USERNAME=YOUR_DATABASE_USERNAME
