@@ -8,7 +8,7 @@
 
 ## 克隆资源库
 ```shell
-git clone https://github.com/gregoryduckworth/laravel-multi-auth.git ./
+git clone https://github.com/jwwb681232/zhanghaobao.git ./
 ```
 ## 安装依赖关系
 ```shell
