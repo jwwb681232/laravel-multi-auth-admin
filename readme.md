@@ -1,5 +1,5 @@
 # zhanghaobao
-> 包含前后台登录认证的后台管理系统，模板为`color admin`
+> 包含前后台登录认证以及权限管理的后台系统，模板为`color admin`
 
 ![image1](http://7xuntv.com1.z0.glb.clouddn.com/zhanghaobao1.png)
 
