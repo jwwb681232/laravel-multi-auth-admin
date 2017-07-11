@@ -5,7 +5,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>Color Admin | Page with Transparent Sidebar</title>
+    <title>管理后台</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <!-- begin mobile sidebar expand / collapse button -->
             <div class="navbar-header">
-                <a href="{{ url('admin') }}" class="navbar-brand"><span class="navbar-logo"></span> Color Admin</a>
+                <a href="{{ url('admin') }}" class="navbar-brand"><span class="navbar-logo"></span> 管理后台</a>
                 <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
