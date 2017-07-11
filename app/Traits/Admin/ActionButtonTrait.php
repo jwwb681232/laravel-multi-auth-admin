@@ -10,7 +10,7 @@ trait ActionButtonTrait
      */
     public function editButton($actionModel,$id = null)
     {
-        if (empty(!$id)){
+        if (!empty($id)){
             $this->id = $id;
         }
         if (auth('admin')->user()->can("{$actionModel}.edit")){
@@ -21,7 +21,7 @@ trait ActionButtonTrait
 
     public function deleteButton($actionModel,$id = null)
     {
-        if (empty(!$id)){
+        if (!empty($id)){
             $this->id = $id;
         }
         if (auth('admin')->user()->can("{$actionModel}.delete")){
