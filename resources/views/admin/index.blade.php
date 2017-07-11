@@ -5,12 +5,12 @@
         <!-- begin breadcrumb -->
         <ol class="breadcrumb pull-right">
             <li><a href="javascript:;">Home</a></li>
-            <li><a href="javascript:;">Page Options</a></li>
-            <li class="active">Page with Transparent Sidebar</li>
+            <li><a href="javascript:;">面包屑</a></li>
+            <li class="active">面包屑</li>
         </ol>
         <!-- end breadcrumb -->
         <!-- begin page-header -->
-        <h1 class="page-header">Page with Transparent Sidebar <small>header small text goes here...</small></h1>
+        <h1 class="page-header">后台主页 <small>描述文字</small></h1>
         <!-- end page-header -->
 
         <div class="row">
@@ -23,10 +23,10 @@
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                         </div>
-                        <h4 class="panel-title">Panel Title here</h4>
+                        <h4 class="panel-title">面板标题</h4>
                     </div>
                     <div class="panel-body">
-                        Panel Content Here
+                        面板内容
                     </div>
                 </div>
             </div>
