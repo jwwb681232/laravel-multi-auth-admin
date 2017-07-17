@@ -23,7 +23,7 @@ class AdminUserRequest extends Request
     public function rules()
     {
         return [
-            'email'=>'required|email',
+            'email'=>'required|email|unique:admins',
             'name'=>'required',
             //'password'=>'required|confirmed',
             'password'=>'confirmed',
@@ -37,6 +37,7 @@ class AdminUserRequest extends Request
         return [
             'email.required'=>'请输入邮箱',
             'email.email'=>'请输入正确的邮箱',
+            'email.unique'=>'邮箱已存在',
             'name.required' => '请输入姓名',
             //'password.required' => '请输密码',
             'role.required'=>'请选择角色'
