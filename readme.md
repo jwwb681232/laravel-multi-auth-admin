@@ -9,6 +9,7 @@
 
 # 说明
 如果喜欢请点个star
+
 因color admin 并不是免费的，所以需要的朋友请加Laravel开发交流群：658533928
 
 ![image4](http://7xuntv.com1.z0.glb.clouddn.com/658533928.JPG?imageMogr2/thumbnail/!50p)
