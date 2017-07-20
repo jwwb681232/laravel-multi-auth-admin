@@ -5,7 +5,7 @@ namespace App\Repositories\Eloquent;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Contracts\MenuRepository as MenuRepositoryInterface;
-use App\models\Menu;
+use App\Models\Menu;
 
 /**
  * Class MenuRepositoryEloquent
