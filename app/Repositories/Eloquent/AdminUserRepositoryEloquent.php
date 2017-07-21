@@ -44,9 +44,9 @@ class AdminUserRepositoryEloquent extends BaseRepository implements AdminUserRep
         $search['regex'] = $request->input('search.regex', false);
         if ($search['value']) {
             if ($search['regex'] == 'true') {//传过来的是字符串不能用bool值比较
-                $this->model = $this->model->where('email', 'like', "%{$search['value']}%");
+                $this->model = $this->model->where('email', 'like', "%{$search['value']}%")->orWhere('name', 'like', "%{$search['value']}%");
             } else {
-                $this->model = $this->model->where('email', $search['value']);
+                $this->model = $this->model->where('email', $search['value'])->orWhere('name', $search['value']);
             }
         }
         $count = $this->model->count();

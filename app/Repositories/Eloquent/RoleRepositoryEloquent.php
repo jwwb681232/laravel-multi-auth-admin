@@ -45,9 +45,9 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepositoryInt
 
         if ($search['value']){
             if ($search['regex'] == 'true'){
-                $this->model = $this->model->where('email','like',"%{$search['value']}%");
+                $this->model = $this->model->where('display_name','like',"%{$search['value']}%")->orWhere('name','like',"%{$search['value']}%");
             }else{
-                $this->model = $this->model->where('email',$search['value']);
+                $this->model = $this->model->where('display_name',$search['value'])->orWhere('name',$search['value']);
             }
         }
 
