@@ -17,8 +17,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(!Auth::guard('admin')->check() && !Auth::guard('users')->check())
-                    <li><a href="/user">User Login</a></li>
-                    <li><a href="/admin">Admin Login</a></li>
+                    <li><a href="/user">前台登录</a></li>
+                    <li><a href="/admin">后台登录</a></li>
                 @else
                     <li><a href="{{ Request::segment(1) }}/logout">Logout</a></li>
                 @endif
