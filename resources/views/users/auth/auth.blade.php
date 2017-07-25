@@ -27,7 +27,7 @@
                 <button type="submit" class="btn btn-success btn-block btn-lg">登 录</button>
             </div>
             <div class="m-t-20">
-                Not a member yet? Click <a href="{{ url('user/register') }}">here</a> to register.
+                没有账号? 马上 <a href="{{ url('user/register') }}">注册</a>
             </div>
         </form>
     </div>
