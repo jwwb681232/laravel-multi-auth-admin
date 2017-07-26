@@ -16,9 +16,7 @@
 
 # 演示地址
 
-```shell
-http://laravel.ranbl.com
-```
+[http://laravel.ranbl.com](http://laravel.ranbl.com)
 
 # 安装
 
