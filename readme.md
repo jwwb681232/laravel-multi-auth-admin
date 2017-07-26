@@ -16,7 +16,7 @@
 
 # 演示地址
 
-[http://laravel.ranbl.com](http://laravel.ranbl.com)
+[http://laravel.ranbl.com](http://laravel.ranbl.com?_blank)
 
 # 安装
 
