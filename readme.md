@@ -14,6 +14,12 @@
 
 ![image4](http://7xuntv.com1.z0.glb.clouddn.com/658533928.JPG?imageMogr2/thumbnail/!50p)
 
+# 演示地址
+
+```shell
+http://laravel.ranbl.com
+```
+
 # 安装
 
 ## 克隆资源库
