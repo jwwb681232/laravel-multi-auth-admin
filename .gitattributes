@@ -1,3 +1,4 @@
 * text=auto
 *.css
 *.less
+*.html linguist-language=php
